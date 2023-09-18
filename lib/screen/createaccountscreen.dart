@@ -14,18 +14,61 @@ class CreateAccountScreen extends StatelessWidget {
           width: width,
           height: height,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Create Account",style: GoogleFonts.inter(
-                fontSize: 20,
-                fontWeight: FontWeight.w600,
-                color: Colors.black,
+              Text(
+                "Create Account",
+                style: GoogleFonts.inter(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black,
+                ),
               ),
+              SizedBox(
+                height: 10,
               ),
-              Text("Start learning with create your account",style: GoogleFonts.inter(
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
-                color: Color(0xff067F77),
+              Text(
+                "Start learning with create your account",
+                style: GoogleFonts.inter(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                  color: Color(0xff067F77),
+                ),
               ),
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                "Username",
+                style: GoogleFonts.inter(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black,
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              TextField(
+                
+                decoration: InputDecoration(
+                  hintText: "create your Username",
+                  hintStyle: GoogleFonts.inter(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xff067F77),
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(
+                      color: Color(0xff067F77),
+                      width: 2,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
