@@ -1,15 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:hotel_reservation/screen/ainsokhna_hotel_screen.dart';
+import 'package:hotel_reservation/screen/alex_hotle_screen.dart';
 import 'package:hotel_reservation/screen/home/category.dart';
+import 'package:hotel_reservation/screen/hurgada_hotel_screen.dart';
+import 'package:hotel_reservation/screen/marsamatroh_hotel_screen.dart';
+import 'package:hotel_reservation/screen/northcost_hotel_screen.dart';
+import 'package:hotel_reservation/screen/sharmelshaikh_hotel_screen.dart';
 
 class HomeTab extends StatelessWidget {
-  List<Category>categories=[
-    Category('assets/Frame 15.png', 'assets/Frame 16.png'),
-    Category('assets/Frame 17.png', 'assets/Frame 18.png'),
-    Category('assets/Frame 15.png', 'assets/Frame 16.png'),
-    Category('assets/Frame 17.png', 'assets/Frame 18.png'),
-  ];
   @override
   Widget build(BuildContext context) {
+    List<Category> categories = [
+      Category(
+          'assets/Frame 15.png',
+          () {
+            Navigator.pushNamed(context, HurgadaHotelScreen.routeName);
+          },
+          'assets/Frame 16.png',
+          () {
+            Navigator.pushNamed(context, SharmElshaikhHotelScreen.routeName);
+          }),
+      Category(
+          'assets/Frame 17.png',
+          () {
+            Navigator.pushNamed(context, NorthCostHotelScreen.routeName);
+          },
+          'assets/Frame 18.png',
+          () {
+            Navigator.pushNamed(context, AinSokhnaHotelScreen.routeName);
+          }),
+      Category(
+          'assets/Frame 15.png',
+          () {
+            Navigator.pushNamed(context, AlexHotelScreen.routeName);
+          },
+          'assets/Frame 16.png',
+          () {
+            Navigator.pushNamed(context, MarsaMatrohHotelScreen.routeName);
+          }),
+    ];
     return Padding(
       padding: EdgeInsets.only(top: 50, left: 15, right: 15),
       child: Column(

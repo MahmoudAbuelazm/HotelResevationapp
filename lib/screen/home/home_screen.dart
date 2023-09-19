@@ -6,6 +6,7 @@ import 'package:hotel_reservation/screen/home/setting_tab.dart';
 class HomeScreen extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
+  static const String routeName='HomeScreen';
 }
 
 class _HomeScreenState extends State<HomeScreen> {

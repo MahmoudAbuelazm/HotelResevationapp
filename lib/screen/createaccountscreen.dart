@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CreateAccountScreen extends StatelessWidget {
+  static const String routeName='Create acc. Screen';
   const CreateAccountScreen({super.key});
 
   @override
