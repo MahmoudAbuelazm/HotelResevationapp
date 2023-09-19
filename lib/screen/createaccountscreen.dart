@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CreateAccountScreen extends StatelessWidget {
-  static const String routeName='Create acc. Screen';
+  static const String routeName = 'Create acc. Screen';
   const CreateAccountScreen({super.key});
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,10 @@ class CreateAccountScreen extends StatelessWidget {
             SizedBox(
               height: height * 0.015,
             ),
-            Material(
+            Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(50),
+              ),
               elevation: 10,
               shadowColor: Colors.black,
               child: TextFormField(
@@ -95,7 +98,10 @@ class CreateAccountScreen extends StatelessWidget {
             SizedBox(
               height: height * 0.015,
             ),
-            Material(
+            Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(50),
+              ),
               elevation: 10,
               shadowColor: Colors.black,
               child: TextFormField(
@@ -137,7 +143,10 @@ class CreateAccountScreen extends StatelessWidget {
             SizedBox(
               height: height * 0.015,
             ),
-            Material(
+            Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(50),
+              ),
               elevation: 10,
               shadowColor: Colors.black,
               child: TextFormField(
@@ -172,18 +181,21 @@ class CreateAccountScreen extends StatelessWidget {
             SizedBox(
               height: height * 0.05,
             ),
-            Container(
-              width: width,
-              height: height * 0.07,
-              child: Center(
-                  child: Text("Create Account",
-                      style: GoogleFonts.inter(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.white))),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50),
-                color: Color(0xff06B1A6),
+            GestureDetector(
+              onTap: () {},
+              child: Container(
+                width: width,
+                height: height * 0.07,
+                child: Center(
+                    child: Text("Create Account",
+                        style: GoogleFonts.inter(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white))),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  color: Color(0xff06B1A6),
+                ),
               ),
             ),
             SizedBox(
@@ -202,55 +214,63 @@ class CreateAccountScreen extends StatelessWidget {
             SizedBox(
               height: height * 0.02,
             ),
-            Container(
-                child:
-                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  Image.asset(
-                    "images/google.png",
-                    height: 20,
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text("sign in with Google",
-                      style: GoogleFonts.inter(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                      ))
-                ]),
-                width: width,
-                height: height * 0.05,
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.black.withOpacity(0.1)),
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.transparent,
-                )),
+            GestureDetector(
+              onTap: () {},
+              child: Container(
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          "images/google.png",
+                          height: 20,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text("sign in with Google",
+                            style: GoogleFonts.inter(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ))
+                      ]),
+                  width: width,
+                  height: height * 0.05,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black.withOpacity(0.1)),
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.transparent,
+                  )),
+            ),
             SizedBox(
               height: height * 0.01,
             ),
-            Container(
-                child:
-                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  Image.asset(
-                    "images/facebook.png",
-                    height: 25,
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text("sign in with Facebook",
-                      style: GoogleFonts.inter(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                      ))
-                ]),
-                width: width,
-                height: height * 0.05,
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.black.withOpacity(0.1)),
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.transparent,
-                ))
+            GestureDetector(
+              onTap: () {},
+              child: Container(
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          "images/facebook.png",
+                          height: 25,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text("sign in with Facebook",
+                            style: GoogleFonts.inter(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ))
+                      ]),
+                  width: width,
+                  height: height * 0.05,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black.withOpacity(0.1)),
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.transparent,
+                  )),
+            )
           ],
         ),
       ),
