@@ -10,7 +10,7 @@ class CreateAccountScreen extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
-        body: Container(
+        body: SizedBox(
           width: width,
           height: height,
           child: Column(
@@ -24,7 +24,7 @@ class CreateAccountScreen extends StatelessWidget {
                   color: Colors.black,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Text(
@@ -32,10 +32,10 @@ class CreateAccountScreen extends StatelessWidget {
                 style: GoogleFonts.inter(
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
-                  color: Color(0xff067F77),
+                  color: const Color(0xff067F77),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Text(
@@ -46,7 +46,7 @@ class CreateAccountScreen extends StatelessWidget {
                   color: Colors.black,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               TextField(
@@ -56,14 +56,14 @@ class CreateAccountScreen extends StatelessWidget {
                   hintStyle: GoogleFonts.inter(
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
-                    color: Color(0xff067F77),
+                    color: const Color(0xff067F77),
                   ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Color(0xff067F77),
                       width: 2,
                     ),
