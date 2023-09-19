@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),*/
-      initialRoute: vereficationscreen.routeName,
+      initialRoute: HomeScreen.routeName,
       routes: {
         CreateAccountScreen.routeName: (_) => CreateAccountScreen(),
         vereficationscreen.routeName: (_) => vereficationscreen(),

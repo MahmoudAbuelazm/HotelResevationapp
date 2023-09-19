@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
 class HotelsData extends StatelessWidget {
+  String text1;
   String imagePath;
-  HotelsData(this.imagePath);
+  String ratingText1;
+  String ratingText2;
+  String price;
+  HotelsData(this.imagePath,this.text1,this.ratingText1,this.ratingText2,this.price);
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -30,7 +34,7 @@ class HotelsData extends StatelessWidget {
               child: Row(
                 children: [
                   Text(
-                    'Sky View Suites Hotel',
+                    '$text1',
                     style: TextStyle(
                         fontSize: 16, fontWeight: FontWeight.w500),
                   ),
@@ -47,11 +51,11 @@ class HotelsData extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    'Very Good',
+                    '$ratingText1',
                     style: TextStyle(fontSize: 12),
                   ),
                   Text(
-                    '1,048 Ratings',
+                    '$ratingText2',
                     style: TextStyle(fontSize: 12),
                   )
                 ],
@@ -73,7 +77,7 @@ class HotelsData extends StatelessWidget {
                           style: TextStyle(fontSize: 14),
                         ),
                         Text(
-                          '1,882 EGP',
+                          '$price',
                           style: TextStyle(fontSize: 14),
                         ),
                         Text(

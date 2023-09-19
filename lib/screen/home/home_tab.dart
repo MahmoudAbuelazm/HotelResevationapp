@@ -30,11 +30,11 @@ class HomeTab extends StatelessWidget {
             Navigator.pushNamed(context, AinSokhnaHotelScreen.routeName);
           }),
       Category(
-          'assets/Frame 15.png',
+          'assets/Rectangle 27.png',
           () {
             Navigator.pushNamed(context, AlexHotelScreen.routeName);
           },
-          'assets/Frame 16.png',
+          'assets/Rectangle 37.png',
           () {
             Navigator.pushNamed(context, MarsaMatrohHotelScreen.routeName);
           }),

@@ -4,8 +4,8 @@ import 'package:hotel_reservation/screen/hotels_data.dart';
 class HurgadaHotelScreen extends StatelessWidget {
   static const String routeName = 'Hurgada Hotel';
   List<HotelsData> hotelsData = [
-    HotelsData('assets/Rectangle 31.png'),
-    HotelsData('assets/Rectangle 40.png'),
+    HotelsData('assets/Rectangle 31.png','Sky View Suites Hotel','Very Good','1,048 Ratings','1,882 EGP'),
+    HotelsData('assets/Rectangle 40.png','Sky View Suites Hotel','Very Good','1,048 Ratings','1,882 EGP'),
   ];
   @override
   Widget build(BuildContext context) {
