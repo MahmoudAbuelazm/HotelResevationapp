@@ -11,6 +11,8 @@ class vereficationscreen extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
+      resizeToAvoidBottomInset:
+          false, // this is to avoid the overflow error when keyboard appears
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leading: Padding(
@@ -92,7 +94,7 @@ class vereficationscreen extends StatelessWidget {
           ),
           SizedBox(height: height * 0.06),
           GestureDetector(
-            onTap: () {},
+            onTap: () => _openModalSheet(context),
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Container(
@@ -149,3 +151,79 @@ final defaultPinTheme = PinTheme(
     borderRadius: BorderRadius.circular(20),
   ),
 );
+
+void _openModalSheet(BuildContext context) {
+  showModalBottomSheet(
+    context: context,
+    isScrollControlled: true, // Allows content to scroll within the modal
+    builder: (BuildContext context) {
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          SizedBox(height: 40),
+          CircleAvatar(
+            radius: 65,
+            backgroundColor: Color(0xffD9D9D9),
+            child: CircleAvatar(
+              radius: 50,
+              backgroundColor: Color(0xff319F43),
+              child: CircleAvatar(
+                radius: 24,
+                backgroundColor: Colors.white,
+                child: CircleAvatar(
+                  backgroundColor: Color(0xff319F43),
+                  radius: 20,
+                  child: Image.asset(
+                    'images/Vector.png',
+                  ),
+                ),
+              ),
+            ),
+          ),
+          SizedBox(height: 20),
+          Text("Register Success",
+              style: GoogleFonts.inter(
+                fontSize: 22,
+                fontWeight: FontWeight.w600,
+                color: Colors.black,
+              )),
+          const SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 35),
+            child: Text(
+              "congratulaions! Your account already created. please login to get amazing experience.",
+              style: GoogleFonts.inter(
+                fontSize: 15,
+                color: Colors.black,
+              ),
+            ),
+          ),
+          const SizedBox(height: 20),
+          GestureDetector(
+            onTap: () => _openModalSheet(context),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height * 0.06,
+                child: Center(
+                    child: Text("go to HomePage",
+                        style: GoogleFonts.inter(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white))),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  color: const Color(0xff06B1A6),
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 20),
+        ],
+      );
+    },
+  );
+}

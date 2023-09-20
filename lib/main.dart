@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:hotel_reservation/screen/ainsokhna_hotel_screen.dart';
 import 'package:hotel_reservation/screen/alex_hotle_screen.dart';
 import 'package:hotel_reservation/screen/createaccountscreen.dart';
+import 'package:hotel_reservation/screen/loginscreen.dart';
 import 'package:hotel_reservation/screen/p_view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:hotel_reservation/screen/home/home_screen.dart';
@@ -17,7 +18,8 @@ void main() async {
 
   SharedPreferences prefs = await SharedPreferences.getInstance();
   bool? decision = prefs.getBool('x');
-  Widget screen = (decision == false || decision == null) ? const PView() : const MyApp();
+  Widget screen =
+      (decision == false || decision == null) ? const PView() : const MyApp();
 
   runApp(screen);
 }
@@ -30,13 +32,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-
-      ),
+      theme: ThemeData(),
       home: buildEasySplashScreen(),
-      initialRoute: HomeScreen.routeName,
+      initialRoute: CreateAccountScreen.routeName,
       routes: {
         CreateAccountScreen.routeName: (_) => CreateAccountScreen(),
+        Loginscreen.routeName: (_) => Loginscreen(),
         vereficationscreen.routeName: (_) => vereficationscreen(),
         HomeScreen.routeName: (_) => HomeScreen(),
         HurgadaHotelScreen.routeName: (_) => HurgadaHotelScreen(),
