@@ -346,7 +346,10 @@ void _openModalSheet(BuildContext context) {
             ),
             const SizedBox(height: 20),
             GestureDetector(
-              onTap: () => _openModalSheetagain(context),
+              onTap: () {
+                Navigator.pop(context);
+                _openModalSheetagain(context);
+              },
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Container(
