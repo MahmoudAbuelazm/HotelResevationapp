@@ -15,7 +15,6 @@ import 'package:hotel_reservation/screen/vereficationscreen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   SharedPreferences prefs = await SharedPreferences.getInstance();
   bool? decision = prefs.getBool('x');
   Widget screen =
@@ -34,7 +33,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
       home: buildEasySplashScreen(),
-      initialRoute: CreateAccountScreen.routeName,
+      initialRoute: Loginscreen.routeName,
       routes: {
         CreateAccountScreen.routeName: (_) => CreateAccountScreen(),
         Loginscreen.routeName: (_) => Loginscreen(),
