@@ -18,7 +18,7 @@ class CreateAccountScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: height * 0.05,
+              height: height * 0.08,
             ),
             Text(
               "Create Account",
@@ -216,21 +216,22 @@ class CreateAccountScreen extends StatelessWidget {
             ),
             GestureDetector(
               child: Container(
-                  child:
-                      Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                    Image.asset(
-                      "images/google.png",
-                      height: 20,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text("sign in with Google",
-                        style: GoogleFonts.inter(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                        ))
-                  ]),
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          "images/google.png",
+                          height: 20,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text("sign in with Google",
+                            style: GoogleFonts.inter(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ))
+                      ]),
                   width: width,
                   height: height * 0.05,
                   decoration: BoxDecoration(
@@ -244,21 +245,22 @@ class CreateAccountScreen extends StatelessWidget {
             ),
             GestureDetector(
               child: Container(
-                  child:
-                      Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                    Image.asset(
-                      "images/facebook.png",
-                      height: 25,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text("sign in with Facebook",
-                        style: GoogleFonts.inter(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                        ))
-                  ]),
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          "images/facebook.png",
+                          height: 25,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text("sign in with Facebook",
+                            style: GoogleFonts.inter(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ))
+                      ]),
                   width: width,
                   height: height * 0.05,
                   decoration: BoxDecoration(

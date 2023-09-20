@@ -191,16 +191,26 @@ void _openModalSheet(BuildContext context) {
               )),
           const SizedBox(height: 10),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 35),
+            padding: const EdgeInsets.symmetric(horizontal: 18),
             child: Text(
-              "congratulaions! Your account already created. please login to get amazing experience.",
+              "congratulaions! Your account already created.",
               style: GoogleFonts.inter(
-                fontSize: 15,
+                fontSize: 14,
                 color: Colors.black,
               ),
             ),
           ),
-          const SizedBox(height: 20),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 18),
+            child: Text(
+              "please login to get amazing experience.",
+              style: GoogleFonts.inter(
+                fontSize: 14,
+                color: Colors.black,
+              ),
+            ),
+          ),
+          const SizedBox(height: 30),
           GestureDetector(
             onTap: () => _openModalSheet(context),
             child: Padding(
@@ -221,7 +231,7 @@ void _openModalSheet(BuildContext context) {
               ),
             ),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 60),
         ],
       );
     },

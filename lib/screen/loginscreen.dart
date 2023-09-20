@@ -26,7 +26,7 @@ class Loginscreen extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 5,
+            height: 15,
           ),
           Text(
             "Please login with registered account",
@@ -36,7 +36,7 @@ class Loginscreen extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 40,
+            height: height * 0.03,
           ),
           Text(
             "Email or Phone Number",
