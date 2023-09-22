@@ -32,10 +32,6 @@ class _PViewState extends State<PView> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        colorScheme:
-        ColorScheme.fromSwatch().copyWith(primary: Colors.pinkAccent),
-      ),
       routes: {
         '/a': (ctx) => const MyApp(),
       },
