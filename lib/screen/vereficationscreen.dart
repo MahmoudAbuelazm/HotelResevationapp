@@ -93,22 +93,23 @@ class vereficationscreen extends StatelessWidget {
             ),
           ),
           SizedBox(height: height * 0.06),
-          GestureDetector(
-            onTap: () => _openModalSheet(context),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Container(
-                width: width,
-                height: height * 0.06,
-                child: Center(
-                    child: Text("Submit",
-                        style: GoogleFonts.inter(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white))),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  color: Color(0xff06B1A6),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(50),
+              ),
+              backgroundColor: const Color(0xff06B1A6),
+            ),
+            onPressed: () => _openModalSheet(context),
+            child: Container(
+              height: MediaQuery.of(context).size.height * 0.06,
+              child: Center(
+                child: Text(
+                  "Submit",
+                  style: GoogleFonts.inter(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white),
                 ),
               ),
             ),
@@ -211,22 +212,23 @@ void _openModalSheet(BuildContext context) {
             ),
           ),
           const SizedBox(height: 30),
-          GestureDetector(
-            onTap: () => _openModalSheet(context),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.06,
-                child: Center(
-                    child: Text("go to HomePage",
-                        style: GoogleFonts.inter(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white))),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  color: const Color(0xff06B1A6),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(50),
+              ),
+              backgroundColor: const Color(0xff06B1A6),
+            ),
+            onPressed: () => _openModalSheet(context),
+            child: Container(
+              height: MediaQuery.of(context).size.height * 0.06,
+              child: Center(
+                child: Text(
+                  "go to HomePage",
+                  style: GoogleFonts.inter(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white),
                 ),
               ),
             ),

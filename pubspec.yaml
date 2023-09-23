@@ -41,6 +41,7 @@ dependencies:
   shared_preferences: ^2.2.1
   flutter_native_splash: ^2.3.2
   pinput: ^3.0.1
+  flutter_switch: ^0.3.2
 
 dev_dependencies:
   flutter_test:
