@@ -49,7 +49,100 @@ class helpsupportscreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: height * 0.03,
+              height: height * 0.06,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Contact',
+                  style: GoogleFonts.inter(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.black,
+                  ),
+                ),
+                Image.asset('images/ooui_next-ltr (1).png'),
+              ],
+            ),
+            SizedBox(
+              height: height * 0.02,
+            ),
+            Divider(
+              thickness: 1,
+              color: Colors.black,
+            ),
+            SizedBox(
+              height: height * 0.02,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Call us',
+                  style: GoogleFonts.inter(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.black,
+                  ),
+                ),
+                Image.asset('images/ooui_next-ltr (1).png'),
+              ],
+            ),
+            SizedBox(
+              height: height * 0.02,
+            ),
+            Divider(
+              thickness: 1,
+              color: Colors.black,
+            ),
+            SizedBox(
+              height: height * 0.02,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Leave us a message about the problem',
+                  style: GoogleFonts.inter(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.black,
+                  ),
+                ),
+                Image.asset('images/ooui_next-ltr (1).png'),
+              ],
+            ),
+            SizedBox(
+              height: height * 0.02,
+            ),
+            Divider(
+              thickness: 1,
+              color: Colors.black,
+            ),
+            SizedBox(
+              height: height * 0.02,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'FAQs',
+                  style: GoogleFonts.inter(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.black,
+                  ),
+                ),
+                Image.asset('images/ooui_next-ltr (1).png'),
+              ],
+            ),
+            SizedBox(
+              height: height * 0.02,
+            ),
+            Divider(
+              thickness: 1,
+              color: Colors.black,
             ),
           ],
         ),

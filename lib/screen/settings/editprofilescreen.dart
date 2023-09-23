@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hotel_reservation/widgets/customcontainer.dart';
 
-class changepassscreen extends StatelessWidget {
-  static const String routeName = 'changepassscreen';
-  const changepassscreen({super.key});
+class editprofilescreen extends StatelessWidget {
+  static const String routeName = 'editprofscrren';
+  const editprofilescreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class changepassscreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Center(
-          child: Text('Change Password',
+          child: Text('Edit Profile',
               style: GoogleFonts.inter(
                   fontSize: 22,
                   fontWeight: FontWeight.w600,
@@ -31,12 +32,21 @@ class changepassscreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(
-              height: height * 0.03,
+              height: height * .02,
+            ),
+            Center(
+              child: Image.asset(
+                "images/mm.png",
+              ),
+            ),
+            SizedBox(
+              height: height * .02,
             ),
             Text(
-              " New Password",
+              "Username",
               style: GoogleFonts.inter(
                 fontSize: 21,
                 fontWeight: FontWeight.w600,
@@ -44,7 +54,7 @@ class changepassscreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: height * 0.02,
+              height: height * .02,
             ),
             Card(
               shape: RoundedRectangleBorder(
@@ -56,38 +66,34 @@ class changepassscreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(50),
                   border: Border.all(color: Colors.black.withOpacity(0.75)),
                 ),
-                width: width * 0.95,
+                width: width * 0.9,
                 height: height * 0.06,
-                child: Row(
-                  children: [
-                    SizedBox(
-                      width: width * 0.035,
-                    ),
-                    Image.asset("images/formkit_password.png"),
-                    SizedBox(
-                      width: width * 0.025,
-                    ),
-                    Text(
-                      "Enter new password",
-                      style: GoogleFonts.inter(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
-                        color: Color(0xff067F77),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  child: Row(
+                    children: [
+                      Image.asset("images/iconamoon_profile.png"),
+                      SizedBox(
+                        width: width * 0.06,
                       ),
-                    ),
-                    SizedBox(
-                      width: width * 0.17,
-                    ),
-                    Image.asset("images/ph_eye 2.png")
-                  ],
+                      Text(
+                        "Amira Zakaria",
+                        style: GoogleFonts.inter(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
             SizedBox(
-              height: height * 0.04,
+              height: height * .02,
             ),
             Text(
-              " Confirm Password",
+              "Email or Phone Number",
               style: GoogleFonts.inter(
                 fontSize: 21,
                 fontWeight: FontWeight.w600,
@@ -95,7 +101,7 @@ class changepassscreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: height * 0.02,
+              height: height * .02,
             ),
             Card(
               shape: RoundedRectangleBorder(
@@ -107,34 +113,75 @@ class changepassscreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(50),
                   border: Border.all(color: Colors.black.withOpacity(0.75)),
                 ),
-                width: width * 0.95,
+                width: width * 0.9,
                 height: height * 0.06,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  child: Row(
+                    children: [
+                      Image.asset("images/EnvelopeSimple.png"),
+                      SizedBox(
+                        width: width * 0.06,
+                      ),
+                      Text(
+                        "amira22@gmail.com",
+                        style: GoogleFonts.inter(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: height * .04,
+            ),
+            Text(
+              "Account Liked With",
+              style: GoogleFonts.inter(
+                fontSize: 21,
+                fontWeight: FontWeight.w600,
+                color: Colors.black,
+              ),
+            ),
+            SizedBox(
+              height: height * .02,
+            ),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                border: Border.all(color: Colors.black.withOpacity(0.12)),
+              ),
+              width: width * .9,
+              height: height * 0.09,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Row(
                   children: [
+                    Image.asset('images/google.png'),
                     SizedBox(
-                      width: width * 0.035,
-                    ),
-                    Image.asset("images/formkit_password.png"),
-                    SizedBox(
-                      width: width * 0.025,
+                      width: width * .03,
                     ),
                     Text(
-                      "Confirm your new password",
+                      "Google",
                       style: GoogleFonts.inter(
-                        fontSize: 15,
+                        fontSize: 19,
                         fontWeight: FontWeight.w500,
-                        color: Color(0xff067F77),
+                        color: Colors.black,
                       ),
                     ),
-                    SizedBox(
-                      width: width * 0.03,
-                    ),
-                    Image.asset("images/ph_eye 2.png")
+                    Spacer(),
+                    Image.asset('images/solar_link-linear.png'),
                   ],
                 ),
               ),
             ),
-            Expanded(child: SizedBox()),
+            SizedBox(
+              height: height * .18,
+            ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
@@ -144,10 +191,10 @@ class changepassscreen extends StatelessWidget {
               ),
               onPressed: () {},
               child: Container(
-                height: height * 0.06,
+                height: height * 0.07,
                 child: Center(
                   child: Text(
-                    "Change Now",
+                    "Save changes",
                     style: GoogleFonts.inter(
                         fontSize: 20,
                         fontWeight: FontWeight.w600,
@@ -155,9 +202,6 @@ class changepassscreen extends StatelessWidget {
                   ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: height * 0.04,
             ),
           ],
         ),

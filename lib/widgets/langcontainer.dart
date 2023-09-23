@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 class langcontainer extends StatelessWidget {
   const langcontainer({
     super.key,
@@ -22,7 +22,7 @@ class langcontainer extends StatelessWidget {
       height: height * 0.08,
       decoration: BoxDecoration(
         border: Border.all(
-          color: Color(0xff067F77),
+          color: Colors.black,
         ),
         borderRadius: BorderRadius.circular(18),
         color: Colors.white,

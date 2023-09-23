@@ -8,6 +8,7 @@ import 'package:hotel_reservation/screen/createaccountscreen.dart';
 import 'package:hotel_reservation/screen/home/favourite_tab.dart';
 import 'package:hotel_reservation/screen/loginscreen.dart';
 import 'package:hotel_reservation/screen/p_view.dart';
+import 'package:hotel_reservation/screen/settings/editprofilescreen.dart';
 import 'package:hotel_reservation/screen/settings/helpsupportscreen.dart';
 import 'package:hotel_reservation/screen/settings/languagescreen.dart';
 import 'package:hotel_reservation/screen/settings/notificationscreen.dart';
@@ -72,11 +73,12 @@ class _MyAppState extends State<MyApp> {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
-      home: const securityscreen(),
+      home: settingscreen(),
       //initialRoute: HomeScreen.routeName,
       routes: {
-        CreateAccountScreen.routeName: (_) => const CreateAccountScreen(),
         notificationscreen.routeName: (_) => const notificationscreen(),
+        CreateAccountScreen.routeName: (_) => const CreateAccountScreen(),
+        editprofilescreen.routeName: (_) => const editprofilescreen(),
         securityscreen.routeName: (_) => const securityscreen(),
         languagescreen.routeName: (_) => const languagescreen(),
         helpsupportscreen.routeName: (_) => const helpsupportscreen(),

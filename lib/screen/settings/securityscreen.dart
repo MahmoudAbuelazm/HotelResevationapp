@@ -75,9 +75,11 @@ class _securityscreenState extends State<securityscreen> {
                           toggleSize: 30.0,
                           value: status,
                           borderRadius: 30.0,
-                          toggleColor: Colors.white,
+                          activeToggleColor: Colors.white,
+                          inactiveToggleColor: Color(0xff06B1A6),
+                          toggleColor: Colors.black,
                           activeColor: Color(0xff06B1A6),
-                          inactiveColor: Colors.black38,
+                          inactiveColor: Colors.white,
                           onToggle: (val) {
                             setState(() {
                               status = val;
@@ -110,9 +112,11 @@ class _securityscreenState extends State<securityscreen> {
                           toggleSize: 30.0,
                           value: status1,
                           borderRadius: 30.0,
-                          toggleColor: Colors.white,
+                          activeToggleColor: Colors.white,
+                          inactiveToggleColor: Color(0xff06B1A6),
+                          toggleColor: Colors.black,
                           activeColor: Color(0xff06B1A6),
-                          inactiveColor: Colors.black38,
+                          inactiveColor: Colors.white,
                           onToggle: (val) {
                             setState(() {
                               status1 = val;
@@ -145,9 +149,11 @@ class _securityscreenState extends State<securityscreen> {
                           toggleSize: 30.0,
                           value: status2,
                           borderRadius: 30.0,
-                          toggleColor: Colors.white,
+                          activeToggleColor: Colors.white,
+                          inactiveToggleColor: Color(0xff06B1A6),
+                          toggleColor: Colors.black,
                           activeColor: Color(0xff06B1A6),
-                          inactiveColor: Colors.black38,
+                          inactiveColor: Colors.white,
                           onToggle: (val) {
                             setState(() {
                               status2 = val;

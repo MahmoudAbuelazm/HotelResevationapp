@@ -9,6 +9,8 @@ class customcontainer extends StatelessWidget {
     required this.image1,
     required this.text,
     required this.image2,
+    required this.color,
+    
   });
 
   final double width;
@@ -16,6 +18,7 @@ class customcontainer extends StatelessWidget {
   final String image1;
   final String text;
   final String image2;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -34,17 +37,20 @@ class customcontainer extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Image.asset(image1),
+              SizedBox(
+                width: width * 0.05,
+              ),
               Text(
                 text,
                 style: GoogleFonts.inter(
                   fontSize: 18,
                   fontWeight: FontWeight.w500,
-                  color: Colors.black,
+                  color: color,
                 ),
               ),
+              Spacer(),
               Image.asset(image2)
             ],
           ),
