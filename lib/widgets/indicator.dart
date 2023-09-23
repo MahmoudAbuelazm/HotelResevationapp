@@ -17,14 +17,15 @@ class Indicator extends StatelessWidget {
     );
   }
 
-  StatelessWidget buildContainer(int i){
-    return
-      Container(
+  StatelessWidget buildContainer(int i) {
+    return Container(
       margin: const EdgeInsets.all(4),
       height: 8,
       width: 8,
-      decoration:
-       BoxDecoration( color: index == i? const Color.fromRGBO(6, 177, 166, 1) : Colors.grey, shape: BoxShape.circle),
+      decoration: BoxDecoration(
+          color:
+              index == i ? const Color.fromRGBO(6, 177, 166, 1) : Colors.grey,
+          shape: BoxShape.circle),
     );
   }
 }

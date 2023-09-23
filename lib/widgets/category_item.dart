@@ -8,13 +8,11 @@ class CategoryItem extends StatelessWidget {
     required this.id,
     required this.title,
     required this.imgUrl,
-
   });
 
   final String id;
   final String title;
   final String imgUrl;
-
 
   void selectCategory(BuildContext ctx) {
     Navigator.of(ctx).pushNamed(CategoryHotelScreen.routeName,
@@ -28,26 +26,13 @@ class CategoryItem extends StatelessWidget {
       onTap: () {
         selectCategory(context);
       },
-      child: Stack(
-        children: <Widget>[
-          ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: Image.asset(
-              imgUrl,
-            ),
-          ),
-          /*Positioned(
-            left: 10,
-            top: 10,
-            child: Container(
-              padding: const EdgeInsets.all(5),
-              child: Text(
-                title,
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
-            ),
-          ),*/
-        ],
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(50),
+        child: Image.asset(
+          imgUrl,
+          width: 300,
+          height: 440,
+        ),
       ),
     );
   }

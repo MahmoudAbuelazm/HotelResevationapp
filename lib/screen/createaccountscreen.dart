@@ -202,7 +202,6 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                         onPressed: () {
                           setState(() {
                             secure = !secure;
-                            print(secure);
                           });
                         },
                       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../dummy_data.dart';
 import '../../widgets/category_item.dart';
@@ -23,12 +24,13 @@ class CategoriesScreen extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
+                       Text(
                         'Welcome Aadam',
-                        style: TextStyle(
-                            fontSize: 28,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black),
+                        style: GoogleFonts.inter(
+                          fontSize: 24,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black,
+                        ),
                       ),
                       TextFormField(
                         decoration: const InputDecoration(
@@ -42,31 +44,21 @@ class CategoriesScreen extends StatelessWidget {
                             border: OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(35)))),
-                      )
+                      ),
                     ],
                   ),
                 )
               ],
             ),
           ),
-         /* Expanded(
-              child: ListView(
-            children: dummyCategories.map((catData) {
-              return CategoryItem(
-                id: catData.id,
-                title: catData.title,
-                imgUrl: catData.imgUrl,
-              );
-            }).toList(),
-          )),*/
           Expanded(
             child: GridView(
-              padding: const EdgeInsets.all(25),
+              padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 20),
               gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                maxCrossAxisExtent: 250,
+                maxCrossAxisExtent: 200,
                 childAspectRatio: 1,
-                crossAxisSpacing: 15,
-                mainAxisSpacing: 100,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 70,
               ),
               children: dummyCategories.map((catData) {
                 return CategoryItem(

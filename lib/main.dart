@@ -1,18 +1,10 @@
-import 'package:easy_splash_screen/easy_splash_screen.dart';
 import 'package:flutter/material.dart';
-/*import 'package:hotel_reservation/screen/ainsokhna_hotel_screen.dart';
-import 'package:hotel_reservation/screen/alex_hotle_screen.dart';*/
 import 'package:hotel_reservation/screen/category_hotel_screen.dart';
 import 'package:hotel_reservation/screen/createaccountscreen.dart';
-import 'package:hotel_reservation/screen/home/favourite_tab.dart';
 import 'package:hotel_reservation/screen/loginscreen.dart';
 import 'package:hotel_reservation/screen/p_view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:hotel_reservation/screen/home/tabs_screen.dart';
-/*import 'package:hotel_reservation/screen/hurgada_hotel_screen.dart';
-import 'package:hotel_reservation/screen/marsamatroh_hotel_screen.dart';
-import 'package:hotel_reservation/screen/northcost_hotel_screen.dart';
-import 'package:hotel_reservation/screen/sharmelshaikh_hotel_screen.dart';*/
 import 'package:hotel_reservation/screen/vereficationscreen.dart';
 
 import 'dummy_data.dart';
@@ -50,7 +42,8 @@ class _MyAppState extends State<MyApp> {
       });
     } else {
       setState(() {
-        _favouriteHotels.add(dummyHotels.firstWhere((hotel) => hotel.id == hotelId));
+        _favouriteHotels.add(
+            dummyHotels.firstWhere((hotel) => hotel.id == hotelId));
       });
     }
   }
@@ -58,6 +51,7 @@ class _MyAppState extends State<MyApp> {
   bool _isHotelFavourite(String hotelId) {
     return _favouriteHotels.any((hotel) => hotel.id == hotelId);
   }
+
   final List<Hotel> _availableHotels = dummyHotels;
 
   @override
@@ -72,31 +66,11 @@ class _MyAppState extends State<MyApp> {
         CreateAccountScreen.routeName: (_) => const CreateAccountScreen(),
         Loginscreen.routeName: (_) => const Loginscreen(),
         vereficationscreen.routeName: (_) => const vereficationscreen(),
-        TabScreen.routeName: (_) =>   TabScreen(_favouriteHotels),
+        TabScreen.routeName: (_) => TabScreen(_favouriteHotels),
         CategoryHotelScreen.routeName: (context) =>
-            CategoryHotelScreen(_availableHotels,_toggleFavourite,_isHotelFavourite),
-
-       /* HurgadaHotelScreen.routeName: (_) => HurgadaHotelScreen(),
-        SharmElshaikhHotelScreen.routeName: (_) => SharmElshaikhHotelScreen(),
-        NorthCostHotelScreen.routeName: (_) => NorthCostHotelScreen(),
-        AinSokhnaHotelScreen.routeName: (_) => AinSokhnaHotelScreen(),
-        AlexHotelScreen.routeName: (_) => AlexHotelScreen(),
-        MarsaMatrohHotelScreen.routeName: (_) => MarsaMatrohHotelScreen(),*/
+            CategoryHotelScreen(
+                _availableHotels, _toggleFavourite, _isHotelFavourite),
       },
-    );
-  }
-
-  EasySplashScreen buildEasySplashScreen() {
-    return EasySplashScreen(
-      logo: Image.asset("images/b.png"),
-      showLoader: true,
-      loadingText: const Text("Loading.."),
-      navigator: const CreateAccountScreen(),
-      durationInSeconds: 4,
-      title: const Text(
-        "Very easy to book a hotel",
-        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-      ),
     );
   }
 }

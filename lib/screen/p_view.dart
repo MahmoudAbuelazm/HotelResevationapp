@@ -1,10 +1,12 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../main.dart';
 import '../modules/pageViewData.dart';
 import '../widgets/indicator.dart';
+import 'loginscreen.dart';
 
 class PView extends StatefulWidget {
   const PView({super.key});
@@ -49,8 +51,7 @@ class _PViewState extends State<PView> {
                 },
                 children: myData
                     .map(
-                      (item) =>
-                      SingleChildScrollView(
+                      (item) => SingleChildScrollView(
                         child: Column(
                           children: <Widget>[
                             Stack(
@@ -83,21 +84,24 @@ class _PViewState extends State<PView> {
                                         ),
                                         Text(
                                           item.title,
-                                          style: const TextStyle(
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black),
+                                          style: GoogleFonts.inter(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w600,
+                                            color: Colors.black,
+                                          ),
                                         ),
                                         const SizedBox(
                                           height: 15,
                                         ),
                                         Padding(
-                                          padding: const EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(20.0),
                                           child: Text(
                                             item.description,
-                                            style: const TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 15),
+                                            style: GoogleFonts.inter(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.w600,
+                                              color: Colors.black,
+                                            ),
                                             textAlign: TextAlign.center,
                                           ),
                                         ),
@@ -114,7 +118,7 @@ class _PViewState extends State<PView> {
                           ],
                         ),
                       ),
-                )
+                    )
                     .toList(),
               );
             }),
@@ -125,27 +129,30 @@ class _PViewState extends State<PView> {
                   width: 370,
                   child: ElevatedButton(
                     style: ButtonStyle(
-
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20.0),
                         ),
                       ),
                       padding:
-                      MaterialStateProperty.all(const EdgeInsets.all(15)),
+                          MaterialStateProperty.all(const EdgeInsets.all(15)),
                       backgroundColor: MaterialStateProperty.all(
                           const Color.fromRGBO(6, 177, 166, 1)),
                     ),
                     onPressed: () async {
-                      Navigator.of(ctx).pushNamed('/a');
+                      Navigator.of(ctx).pushReplacementNamed('/a');
 
                       SharedPreferences prefs =
-                      await SharedPreferences.getInstance();
+                          await SharedPreferences.getInstance();
                       prefs.setBool('x', true);
                     },
-                    child: const Text(
+                    child: Text(
                       "Create Account",
-                      style: TextStyle(fontSize: 20),
+                      style: GoogleFonts.inter(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
@@ -153,10 +160,21 @@ class _PViewState extends State<PView> {
             }),
             Align(
               alignment: const Alignment(0, 1),
-              child: TextButton(onPressed: () {},
-                  child: const Text("Already Have an Account",
-                    style: TextStyle(fontSize: 15, color:Color.fromRGBO(6, 177, 166, 1)),)),
-            ),
+              child: TextButton(
+                onPressed: () {
+                  Navigator.of(context)
+                      .pushReplacementNamed(Loginscreen.routeName);
+                },
+                child: Text(
+                  "Already Have an Account",
+                  style: GoogleFonts.inter(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    color: const Color.fromRGBO(6, 177, 166, 1),
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),
