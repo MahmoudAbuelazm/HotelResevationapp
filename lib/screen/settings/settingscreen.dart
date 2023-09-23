@@ -126,7 +126,96 @@ class settingscreen extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  
+                  showDialog<String>(
+                    context: context,
+                    builder: (BuildContext context) => AlertDialog(
+                      shape: RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.all(Radius.circular(20.0))),
+                      actions: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 15),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                height: height * 0.05,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  GestureDetector(
+                                      onTap: () => Navigator.pop(context),
+                                      child:
+                                          Image.asset("images/ph_x-bold.png")),
+                                ],
+                              ),
+                              SizedBox(
+                                height: height * 0.05,
+                              ),
+                              Text(
+                                "Are you sure you want to",
+                                style: GoogleFonts.inter(
+                                  fontSize: 19,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.black,
+                                ),
+                              ),
+                              Text(
+                                "logout?",
+                                style: GoogleFonts.inter(
+                                  fontSize: 19,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.black,
+                                ),
+                              ),
+                              SizedBox(
+                                height: height * 0.03,
+                              ),
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(50),
+                                  ),
+                                  backgroundColor: const Color(0xff06B1A6),
+                                ),
+                                onPressed: () =>
+                                    Navigator.pop(context, 'Cancel'),
+                                child: Container(
+                                  width: width * 0.5,
+                                  height: height * 0.07,
+                                  child: Center(
+                                    child: Text(
+                                      "Cancel",
+                                      style: GoogleFonts.inter(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w600,
+                                          color: Colors.white),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(context, 'Logout'),
+                                child: Text(
+                                  'Logout',
+                                  style: GoogleFonts.inter(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w600,
+                                      color:
+                                          Color(0xffEB1010).withOpacity(.88)),
+                                ),
+                              ),
+                              SizedBox(
+                                height: height * 0.05,
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  );
                 },
                 child: customcontainer(
                   color: Color(0xffEB1010),
