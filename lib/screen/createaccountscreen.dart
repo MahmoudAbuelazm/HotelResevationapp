@@ -228,27 +228,29 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                 SizedBox(
                   height: height * 0.05,
                 ),
-                GestureDetector(
-                  onTap: () {
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50),
+                    ),
+                    backgroundColor: const Color(0xff06B1A6),
+                  ),
+                  onPressed: () {
                     if (!_formKey.currentState!.validate()) {
                       return;
                     }
                     _formKey.currentState?.save();
-                    Navigator.of(context).pushReplacementNamed(Loginscreen.routeName);
+                    Navigator.of(context)
+                        .pushReplacementNamed(Loginscreen.routeName);
                   },
                   child: Container(
-                    width: width,
-                    height: height * 0.07,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                      color: const Color(0xff06B1A6),
-                    ),
+                    height: height * 0.06,
                     child: Center(
                       child: Text(
                         "Create Account",
                         style: GoogleFonts.inter(
                             fontSize: 20,
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.w600,
                             color: Colors.white),
                       ),
                     ),
@@ -273,7 +275,8 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                       width: width,
                       height: height * 0.05,
                       decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black.withOpacity(0.1)),
+                        border:
+                            Border.all(color: Colors.black.withOpacity(0.1)),
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.transparent,
                       ),
@@ -302,7 +305,8 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                       width: width,
                       height: height * 0.05,
                       decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black.withOpacity(0.1)),
+                        border:
+                            Border.all(color: Colors.black.withOpacity(0.1)),
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.transparent,
                       ),
@@ -329,7 +333,8 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                 Center(
                   child: TextButton(
                       onPressed: () {
-                        Navigator.of(context).pushReplacementNamed(Loginscreen.routeName);
+                        Navigator.of(context)
+                            .pushReplacementNamed(Loginscreen.routeName);
                       },
                       child: Text(
                         "Already Have an Account",
@@ -337,8 +342,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
                             color: const Color(0xff06B1A6),
-                          fontStyle: FontStyle.italic
-                        ),
+                            fontStyle: FontStyle.italic),
                       )),
                 ),
               ],

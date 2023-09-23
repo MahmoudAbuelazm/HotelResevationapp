@@ -11,6 +11,7 @@ List<Category> dummyCategories = [
   Category(id: "c6", title: "Marsa Matrouh", imgUrl: 'assets/matrouh.jpeg'),
 ];
 
+
 List<Hotel> dummyHotels = [
   Hotel(
       id: "h1",

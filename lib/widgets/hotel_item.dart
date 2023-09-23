@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hotel_reservation/dummy_data.dart';
-import 'package:hotel_reservation/screen/home/category_screen.dart';
 
-import '../modules/hotel.dart';
-import '../screen/home/favourite_tab.dart';
 
 class HotelItem extends StatefulWidget {
   final String id;

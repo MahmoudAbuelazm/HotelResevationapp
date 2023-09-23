@@ -26,9 +26,10 @@ class _LoginscreenState extends State<Loginscreen> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Form(
-          key:_formKey,
+          key: _formKey,
           child: SingleChildScrollView(
-            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               SizedBox(
                 height: height * 0.1,
               ),
@@ -191,12 +192,13 @@ class _LoginscreenState extends State<Loginscreen> {
                 height: height * 0.03,
               ),
               GestureDetector(
-                onTap: (){
+                onTap: () {
                   if (!_formKey.currentState!.validate()) {
                     return;
                   }
                   _formKey.currentState?.save();
-                  Navigator.of(context).pushReplacementNamed(TabScreen.routeName);
+                  Navigator.of(context)
+                      .pushReplacementNamed(TabScreen.routeName);
                 },
                 child: Container(
                   width: width,
@@ -239,21 +241,22 @@ class _LoginscreenState extends State<Loginscreen> {
                       borderRadius: BorderRadius.circular(20),
                       color: Colors.transparent,
                     ),
-                    child:
-                        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                      Image.asset(
-                        "images/google.png",
-                        height: 20,
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Text("sign in with Google",
-                          style: GoogleFonts.inter(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                          ))
-                    ])),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            "images/google.png",
+                            height: 20,
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Text("sign in with Google",
+                              style: GoogleFonts.inter(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                              ))
+                        ])),
               ),
               SizedBox(
                 height: height * 0.01,
@@ -267,22 +270,24 @@ class _LoginscreenState extends State<Loginscreen> {
                       borderRadius: BorderRadius.circular(20),
                       color: Colors.transparent,
                     ),
-                    child:
-                        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                      Image.asset(
-                        "images/facebook.png",
-                        height: 25,
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Text("sign in with Facebook",
-                          style: GoogleFonts.inter(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                          ),),
-
-                    ])),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            "images/facebook.png",
+                            height: 25,
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            "sign in with Facebook",
+                            style: GoogleFonts.inter(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ])),
               ),
               const SizedBox(
                 height: 20,
@@ -290,7 +295,8 @@ class _LoginscreenState extends State<Loginscreen> {
               Center(
                 child: TextButton(
                     onPressed: () {
-                      Navigator.of(context).pushReplacementNamed(CreateAccountScreen.routeName);
+                      Navigator.of(context)
+                          .pushReplacementNamed(CreateAccountScreen.routeName);
                     },
                     child: Text(
                       "Don't Have an Account?",
@@ -298,8 +304,7 @@ class _LoginscreenState extends State<Loginscreen> {
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
                           color: const Color(0xff06B1A6),
-                        fontStyle: FontStyle.italic
-                      ),
+                          fontStyle: FontStyle.italic),
                     )),
               ),
             ]),
@@ -316,7 +321,7 @@ void _openModalSheet(BuildContext context) {
     //isScrollControlled: true, // Allows content to scroll within the modal
     builder: (BuildContext context) {
       return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 50,horizontal: 20),
+        padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 20),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -412,26 +417,28 @@ void _openModalSheet(BuildContext context) {
                 ),
               ),
               const SizedBox(height: 20),
-              GestureDetector(
-                onTap: () {
+
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  backgroundColor: const Color(0xff06B1A6),
+                ),
+                onPressed: () {
                   Navigator.pop(context);
                   _openModalSheetagain(context);
                 },
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height * 0.06,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                      color: const Color(0xff06B1A6),
+                child: Container(
+                  height: MediaQuery.of(context).size.height * 0.06,
+                  child: Center(
+                    child: Text(
+                      "Send Code",
+                      style: GoogleFonts.inter(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white),
                     ),
-                    child: Center(
-                        child: Text("Send Code",
-                            style: GoogleFonts.inter(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white))),
                   ),
                 ),
               ),
@@ -564,23 +571,24 @@ void _openModalSheetagain(BuildContext context) {
               ),
             ),
             const SizedBox(height: 30),
-            GestureDetector(
-              onTap: () => _openModalSheet(context),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.06,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    color: const Color(0xff06B1A6),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50),
+                ),
+                backgroundColor: const Color(0xff06B1A6),
+              ),
+              onPressed: () => _openModalSheet(context),
+              child: Container(
+                height: MediaQuery.of(context).size.height * 0.06,
+                child: Center(
+                  child: Text(
+                    "Change Password",
+                    style: GoogleFonts.inter(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white),
                   ),
-                  child: Center(
-                      child: Text("Change Password",
-                          style: GoogleFonts.inter(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.white))),
                 ),
               ),
             ),
