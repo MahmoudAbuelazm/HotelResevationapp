@@ -2,41 +2,40 @@ import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class securityscreen extends StatefulWidget {
-  static const String routeName = 'securityscreen';
-  const securityscreen({super.key});
+class NotificationScreen extends StatefulWidget {
+
+  const NotificationScreen({super.key});
 
   @override
-  State<securityscreen> createState() => _securityscreenState();
+  State<NotificationScreen> createState() => _NotificationScreenState();
 }
 
-class _securityscreenState extends State<securityscreen> {
-  bool status = true;
+class _NotificationScreenState extends State<NotificationScreen> {
+  bool status = false;
   bool status1 = true;
-  bool status2 = true;
-
+  bool status2 = false;
+  bool status3 = true;
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: Text('Security',
-              style: GoogleFonts.inter(
-                  fontSize: 22,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.black)),
-        ),
+        title: Text('Notification',
+            style: GoogleFonts.inter(
+                fontSize: 22,
+                fontWeight: FontWeight.w600,
+                color: Colors.black)),
         backgroundColor: Colors.white,
         elevation: 1,
+        centerTitle: true,
         leading: GestureDetector(
             onTap: () {
               Navigator.pop(context);
             },
-            child: Image.asset('images/ep_back.png')),
-        actions: [Image.asset('images/charm_menu-kebab.png')],
-      ),
+
+            child: const Icon(Icons.arrow_back_outlined,size: 33,color: Colors.black,),
+      ),),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
@@ -52,7 +51,7 @@ class _securityscreenState extends State<securityscreen> {
                 borderRadius: BorderRadius.circular(18),
               ),
               width: width * 0.9,
-              height: height * 0.37,
+              height: height * 0.49,
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 35),
                 child: Column(
@@ -64,7 +63,7 @@ class _securityscreenState extends State<securityscreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('Face ID',
+                        Text('Assign',
                             style: GoogleFonts.inter(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w600,
@@ -75,9 +74,11 @@ class _securityscreenState extends State<securityscreen> {
                           toggleSize: 30.0,
                           value: status,
                           borderRadius: 30.0,
-                          toggleColor: Colors.white,
-                          activeColor: Color(0xff06B1A6),
-                          inactiveColor: Colors.black38,
+                          activeToggleColor: Colors.white,
+                          inactiveToggleColor: const Color(0xff06B1A6),
+                          toggleColor: Colors.black,
+                          activeColor: const Color(0xff06B1A6),
+                          inactiveColor: Colors.white,
                           onToggle: (val) {
                             setState(() {
                               status = val;
@@ -89,7 +90,7 @@ class _securityscreenState extends State<securityscreen> {
                     SizedBox(
                       height: height * 0.02,
                     ),
-                    Divider(
+                    const Divider(
                       thickness: 1,
                       color: Color(0xffD9D9D9),
                     ),
@@ -99,7 +100,7 @@ class _securityscreenState extends State<securityscreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('Remember password',
+                        Text('Comment',
                             style: GoogleFonts.inter(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w600,
@@ -110,9 +111,11 @@ class _securityscreenState extends State<securityscreen> {
                           toggleSize: 30.0,
                           value: status1,
                           borderRadius: 30.0,
-                          toggleColor: Colors.white,
-                          activeColor: Color(0xff06B1A6),
-                          inactiveColor: Colors.black38,
+                          activeToggleColor: Colors.white,
+                          inactiveToggleColor: const Color(0xff06B1A6),
+                          toggleColor: Colors.black,
+                          activeColor: const Color(0xff06B1A6),
+                          inactiveColor: Colors.white,
                           onToggle: (val) {
                             setState(() {
                               status1 = val;
@@ -124,7 +127,7 @@ class _securityscreenState extends State<securityscreen> {
                     SizedBox(
                       height: height * 0.02,
                     ),
-                    Divider(
+                    const Divider(
                       thickness: 1,
                       color: Color(0xffD9D9D9),
                     ),
@@ -134,7 +137,7 @@ class _securityscreenState extends State<securityscreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('Touch ID ',
+                        Text('Follow',
                             style: GoogleFonts.inter(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w600,
@@ -145,9 +148,11 @@ class _securityscreenState extends State<securityscreen> {
                           toggleSize: 30.0,
                           value: status2,
                           borderRadius: 30.0,
-                          toggleColor: Colors.white,
-                          activeColor: Color(0xff06B1A6),
-                          inactiveColor: Colors.black38,
+                          activeToggleColor: Colors.white,
+                          inactiveToggleColor: const Color(0xff06B1A6),
+                          toggleColor: Colors.black,
+                          activeColor: const Color(0xff06B1A6),
+                          inactiveColor: Colors.white,
                           onToggle: (val) {
                             setState(() {
                               status2 = val;
@@ -155,6 +160,46 @@ class _securityscreenState extends State<securityscreen> {
                           },
                         ),
                       ],
+                    ),
+                    SizedBox(
+                      height: height * 0.03,
+                    ),
+                    const Divider(
+                      thickness: 1,
+                      color: Color(0xffD9D9D9),
+                    ),
+                    SizedBox(
+                      height: height * 0.03,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('Comment',
+                            style: GoogleFonts.inter(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black)),
+                        FlutterSwitch(
+                          width: width * 0.20,
+                          height: height * 0.05,
+                          toggleSize: 30.0,
+                          value: status3,
+                          borderRadius: 30.0,
+                          activeToggleColor: Colors.white,
+                          inactiveToggleColor: const Color(0xff06B1A6),
+                          toggleColor: Colors.black,
+                          activeColor: const Color(0xff06B1A6),
+                          inactiveColor: Colors.white,
+                          onToggle: (val) {
+                            setState(() {
+                              status3 = val;
+                            });
+                          },
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: height * 0.02,
                     ),
                   ],
                 ),

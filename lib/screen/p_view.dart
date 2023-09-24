@@ -4,9 +4,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../main.dart';
-import '../modules/pageViewData.dart';
+import '../modules/page_view_data.dart';
 import '../widgets/indicator.dart';
-import 'loginscreen.dart';
+import 'create_account_screen.dart';
+import 'login_screen.dart';
 
 class PView extends StatefulWidget {
   const PView({super.key});
@@ -35,7 +36,7 @@ class _PViewState extends State<PView> {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        '/a': (ctx) => const MyApp(),
+        '/a': (ctx) => const CreateAccountScreen(),
       },
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -122,8 +123,7 @@ class _PViewState extends State<PView> {
                     .toList(),
               );
             }),
-            Builder(builder: (ctx) {
-              return Align(
+            Align(
                 alignment: const Alignment(0, 0.85),
                 child: SizedBox(
                   width: 370,
@@ -140,11 +140,7 @@ class _PViewState extends State<PView> {
                           const Color.fromRGBO(6, 177, 166, 1)),
                     ),
                     onPressed: () async {
-                      Navigator.of(ctx).pushReplacementNamed('/a');
-
-                      SharedPreferences prefs =
-                          await SharedPreferences.getInstance();
-                      prefs.setBool('x', true);
+                      Navigator.of(context).pushReplacementNamed(CreateAccountScreen.routeName);
                     },
                     child: Text(
                       "Create Account",
@@ -156,8 +152,7 @@ class _PViewState extends State<PView> {
                     ),
                   ),
                 ),
-              );
-            }),
+              ),
             Align(
               alignment: const Alignment(0, 1),
               child: TextButton(

@@ -1,23 +1,24 @@
+import 'package:easy_splash_screen/easy_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:hotel_reservation/screen/category_hotel_screen.dart';
-import 'package:hotel_reservation/screen/createaccountscreen.dart';
-import 'package:hotel_reservation/screen/loginscreen.dart';
+import 'package:hotel_reservation/screen/settings/change_pass_screen.dart';
+import 'package:hotel_reservation/screen/create_account_screen.dart';
+import 'package:hotel_reservation/screen/login_screen.dart';
 import 'package:hotel_reservation/screen/p_view.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:hotel_reservation/screen/settings/edit_profile_screen.dart';
+import 'package:hotel_reservation/screen/settings/help_support_screen.dart';
+import 'package:hotel_reservation/screen/settings/language_screen.dart';
+import 'package:hotel_reservation/screen/settings/notification_screen.dart';
+import 'package:hotel_reservation/screen/settings/security_screen.dart';
+import 'package:hotel_reservation/screen/settings/setting_screen.dart';
 import 'package:hotel_reservation/screen/home/tabs_screen.dart';
-import 'package:hotel_reservation/screen/vereficationscreen.dart';
+import 'package:hotel_reservation/screen/verefication_screen.dart';
 
 import 'dummy_data.dart';
 import 'modules/hotel.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  bool? decision = prefs.getBool('x');
-  Widget screen =
-      (decision == false || decision == null) ? const PView() : const MyApp();
-
-  runApp(screen);
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -57,20 +58,20 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
-      home: const CreateAccountScreen(),
+      home: const PView(),
       //initialRoute: HomeScreen.routeName,
       routes: {
         CreateAccountScreen.routeName: (_) => const CreateAccountScreen(),
+        SettingScreen.routeName: (_) => const SettingScreen(),
         Loginscreen.routeName: (_) => const Loginscreen(),
         vereficationscreen.routeName: (_) => const vereficationscreen(),
         TabScreen.routeName: (_) => TabScreen(_favouriteHotels),
-        CategoryHotelScreen.routeName: (context) =>
-            CategoryHotelScreen(
-                _availableHotels, _toggleFavourite, _isHotelFavourite),
+        CategoryHotelScreen.routeName: (context) => CategoryHotelScreen(
+            _availableHotels, _toggleFavourite, _isHotelFavourite),
       },
     );
   }
+
 }

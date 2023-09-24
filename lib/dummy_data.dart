@@ -3,11 +3,11 @@ import 'package:hotel_reservation/modules/category.dart';
 import 'modules/hotel.dart';
 
 List<Category> dummyCategories = [
-  Category(id: "c1", title: "Hurghada", imgUrl: 'assets/Frame 15.png'),
-  Category(id: "c2", title: "Sharm El-Shaikh", imgUrl: 'assets/Frame 16.png'),
-  Category(id: "c3", title: "North Coast", imgUrl: 'assets/Frame 17.png'),
-  Category(id: "c4", title: "Ain Sokhna", imgUrl: 'assets/Frame 18.png'),
-  Category(id: "c5", title: "Alexandria", imgUrl: 'assets/alex.jpeg'),
+  Category(id: "c1", title: "Hurghada", imgUrl: 'assets/Hurghada.png'),
+  Category(id: "c2", title: "Sharm El-Shaikh", imgUrl: 'assets/SharmElShiekh.png'),
+  Category(id: "c3", title: "North Coast", imgUrl: 'assets/NorthCoast.png'),
+  Category(id: "c4", title: "Ain Sokhna", imgUrl: 'assets/AinSokhna.png'),
+  Category(id: "c5", title: "Alexandria", imgUrl: 'assets/alex.jpg'),
   Category(id: "c6", title: "Marsa Matrouh", imgUrl: 'assets/matrouh.jpeg'),
 ];
 

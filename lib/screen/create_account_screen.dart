@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'loginscreen.dart';
+import 'login_screen.dart';
 
 class CreateAccountScreen extends StatefulWidget {
-  static const String routeName = 'Create acc. Screen';
+  static const String routeName = 'CreateScreen';
 
   const CreateAccountScreen({super.key});
 

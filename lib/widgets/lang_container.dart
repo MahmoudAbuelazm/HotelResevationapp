@@ -1,19 +1,23 @@
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-class langcontainer extends StatelessWidget {
-  const langcontainer({
+
+class LangContainer extends StatelessWidget {
+  const LangContainer({
     super.key,
     required this.width,
     required this.height,
     required this.image,
     required this.text,
+    required this.w,
+    required this.h,
   });
 
   final double width;
   final double height;
   final String image;
   final String text;
+  final double w;
+  final double h;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +26,7 @@ class langcontainer extends StatelessWidget {
       height: height * 0.08,
       decoration: BoxDecoration(
         border: Border.all(
-          color: Color(0xff067F77),
+          color: Colors.black,
         ),
         borderRadius: BorderRadius.circular(18),
         color: Colors.white,
@@ -50,6 +54,7 @@ class langcontainer extends StatelessWidget {
             SizedBox(
               width: width * 0.35,
             ),
+            Image.asset('images/icon-park-outline_correct.png',width: w,height: h,),
           ],
         ),
       ),

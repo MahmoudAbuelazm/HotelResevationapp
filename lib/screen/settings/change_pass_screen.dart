@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class changepassscreen extends StatelessWidget {
-  static const String routeName = 'changepassscreen';
-  const changepassscreen({super.key});
+class ChangePassScreen extends StatefulWidget {
+  const ChangePassScreen({super.key});
 
+  @override
+  State<ChangePassScreen> createState() => _ChangePassScreenState();
+}
+
+class _ChangePassScreenState extends State<ChangePassScreen> {
+  bool secure = true;
+  bool secure2 = true;
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -24,8 +30,7 @@ class changepassscreen extends StatelessWidget {
             onTap: () {
               Navigator.pop(context);
             },
-            child: Image.asset('images/ep_back.png')),
-        actions: [Image.asset('images/charm_menu-kebab.png')],
+            child: const Icon(Icons.arrow_back_outlined,size: 33,color: Colors.black,)),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -58,23 +63,37 @@ class changepassscreen extends StatelessWidget {
                 ),
                 width: width * 0.95,
                 height: height * 0.06,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Image.asset("images/formkit_password.png"),
-                      Text(
-                        "Enter new password",
-                        style: GoogleFonts.inter(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xff067F77),
-                        ),
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: width * 0.035,
+                    ),
+                    const Icon(Icons.lock_person_outlined,size: 33),
+                    SizedBox(
+                      width: width * 0.025,
+                    ),
+                    Text(
+                      "Enter new password",
+                      style: GoogleFonts.inter(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                        color: const Color(0xff067F77),
                       ),
-                      Image.asset("images/ph_eye 2.png")
-                    ],
-                  ),
+                    ),
+                    SizedBox(
+                      width: width * 0.25,
+                    ),
+                    IconButton(
+                      icon: Icon(
+                        secure ? Icons.visibility : Icons.visibility_off,
+                        color: const Color(0xff067F77),),
+                      onPressed: () {
+                        setState(() {
+                          secure = !secure;
+                        });
+                      },
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -104,27 +123,41 @@ class changepassscreen extends StatelessWidget {
                 ),
                 width: width * 0.95,
                 height: height * 0.06,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Image.asset("images/formkit_password.png"),
-                      Text(
-                        "Confirm your new password",
-                        style: GoogleFonts.inter(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xff067F77),
-                        ),
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: width * 0.035,
+                    ),
+                    const Icon(Icons.lock_person_outlined,size: 33),
+                    SizedBox(
+                      width: width * 0.025,
+                    ),
+                    Text(
+                      "Confirm your new password",
+                      style: GoogleFonts.inter(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                        color: const Color(0xff067F77),
                       ),
-                      Image.asset("images/ph_eye 2.png")
-                    ],
-                  ),
+                    ),
+                    SizedBox(
+                      width: width * 0.10,
+                    ),
+                    IconButton(
+                      icon: Icon(
+                        secure2 ? Icons.visibility : Icons.visibility_off,
+                        color: const Color(0xff067F77),),
+                      onPressed: () {
+                        setState(() {
+                          secure2 = !secure2;
+                        });
+                      },
+                    ),
+                  ],
                 ),
               ),
             ),
-            Expanded(child: SizedBox()),
+            const Expanded(child: SizedBox()),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
@@ -132,8 +165,10 @@ class changepassscreen extends StatelessWidget {
                 ),
                 backgroundColor: const Color(0xff06B1A6),
               ),
-              onPressed: () {},
-              child: Container(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: SizedBox(
                 height: height * 0.06,
                 child: Center(
                   child: Text(

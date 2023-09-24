@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_reservation/modules/hotel.dart';
 import 'package:hotel_reservation/screen/home/favourite_tab.dart';
-import 'package:hotel_reservation/screen/home/setting_tab.dart';
 
+
+import '../settings/setting_screen.dart';
 import 'category_screen.dart';
 
 class TabScreen extends StatefulWidget {
@@ -26,7 +27,7 @@ class _TabScreenState extends State<TabScreen> {
     items = [
       const CategoriesScreen(),
       FavouriteTab(widget.favourite),
-      SettingTab()
+      const SettingScreen()
     ];
   }
 

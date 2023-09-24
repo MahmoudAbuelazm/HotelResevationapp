@@ -2,41 +2,39 @@ import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class notificationscreen extends StatefulWidget {
-  static const String routeName = 'notificationscreen';
-  const notificationscreen({super.key});
+class SecurityScreen extends StatefulWidget {
+
+  const SecurityScreen({super.key});
 
   @override
-  State<notificationscreen> createState() => _notificationscreenState();
+  State<SecurityScreen> createState() => _SecurityScreenState();
 }
 
-class _notificationscreenState extends State<notificationscreen> {
+class _SecurityScreenState extends State<SecurityScreen> {
+  bool status = false;
+  bool status1 = false;
+  bool status2 = false;
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-    bool status = true;
-    bool status1 = true;
-    bool status2 = true;
-    bool status3 = true;
-
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: Text('Notification',
-              style: GoogleFonts.inter(
-                  fontSize: 22,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.black)),
-        ),
+        title: Text('Security',
+            style: GoogleFonts.inter(
+                fontSize: 22,
+                fontWeight: FontWeight.w600,
+                color: Colors.black)),
         backgroundColor: Colors.white,
         elevation: 1,
+        centerTitle: true,
         leading: GestureDetector(
             onTap: () {
               Navigator.pop(context);
             },
-            child: Image.asset('images/ep_back.png')),
-        actions: [Image.asset('images/charm_menu-kebab.png')],
+            child: const Icon(Icons.arrow_back_outlined,size: 33,color: Colors.black,),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -53,7 +51,7 @@ class _notificationscreenState extends State<notificationscreen> {
                 borderRadius: BorderRadius.circular(18),
               ),
               width: width * 0.9,
-              height: height * 0.5,
+              height: height * 0.37,
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 35),
                 child: Column(
@@ -65,7 +63,7 @@ class _notificationscreenState extends State<notificationscreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('Assign',
+                        Text('Face ID',
                             style: GoogleFonts.inter(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w600,
@@ -76,9 +74,11 @@ class _notificationscreenState extends State<notificationscreen> {
                           toggleSize: 30.0,
                           value: status,
                           borderRadius: 30.0,
-                          toggleColor: Colors.white,
-                          activeColor: Color(0xff06B1A6),
-                          inactiveColor: Colors.black38,
+                          activeToggleColor: Colors.white,
+                          inactiveToggleColor: const Color(0xff06B1A6),
+                          toggleColor: Colors.black,
+                          activeColor: const Color(0xff06B1A6),
+                          inactiveColor: Colors.white,
                           onToggle: (val) {
                             setState(() {
                               status = val;
@@ -90,7 +90,7 @@ class _notificationscreenState extends State<notificationscreen> {
                     SizedBox(
                       height: height * 0.02,
                     ),
-                    Divider(
+                    const Divider(
                       thickness: 1,
                       color: Color(0xffD9D9D9),
                     ),
@@ -100,7 +100,7 @@ class _notificationscreenState extends State<notificationscreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('Comment',
+                        Text('Remember password',
                             style: GoogleFonts.inter(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w600,
@@ -111,9 +111,11 @@ class _notificationscreenState extends State<notificationscreen> {
                           toggleSize: 30.0,
                           value: status1,
                           borderRadius: 30.0,
-                          toggleColor: Colors.white,
-                          activeColor: Color(0xff06B1A6),
-                          inactiveColor: Colors.black38,
+                          activeToggleColor: Colors.white,
+                          inactiveToggleColor: const Color(0xff06B1A6),
+                          toggleColor: Colors.black,
+                          activeColor: const Color(0xff06B1A6),
+                          inactiveColor: Colors.white,
                           onToggle: (val) {
                             setState(() {
                               status1 = val;
@@ -125,7 +127,7 @@ class _notificationscreenState extends State<notificationscreen> {
                     SizedBox(
                       height: height * 0.02,
                     ),
-                    Divider(
+                    const Divider(
                       thickness: 1,
                       color: Color(0xffD9D9D9),
                     ),
@@ -135,7 +137,7 @@ class _notificationscreenState extends State<notificationscreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('Follow',
+                        Text('Touch ID ',
                             style: GoogleFonts.inter(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w600,
@@ -146,9 +148,11 @@ class _notificationscreenState extends State<notificationscreen> {
                           toggleSize: 30.0,
                           value: status2,
                           borderRadius: 30.0,
-                          toggleColor: Colors.white,
-                          activeColor: Color(0xff06B1A6),
-                          inactiveColor: Colors.black38,
+                          activeToggleColor: Colors.white,
+                          inactiveToggleColor: const Color(0xff06B1A6),
+                          toggleColor: Colors.black,
+                          activeColor: const Color(0xff06B1A6),
+                          inactiveColor: Colors.white,
                           onToggle: (val) {
                             setState(() {
                               status2 = val;
@@ -156,44 +160,6 @@ class _notificationscreenState extends State<notificationscreen> {
                           },
                         ),
                       ],
-                    ),
-                    SizedBox(
-                      height: height * 0.02,
-                    ),
-                    Divider(
-                      thickness: 1,
-                      color: Color(0xffD9D9D9),
-                    ),
-                    SizedBox(
-                      height: height * 0.04,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('Notification',
-                            style: GoogleFonts.inter(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black)),
-                        FlutterSwitch(
-                          width: width * 0.20,
-                          height: height * 0.05,
-                          toggleSize: 30.0,
-                          value: status1,
-                          borderRadius: 30.0,
-                          toggleColor: Colors.white,
-                          activeColor: Color(0xff06B1A6),
-                          inactiveColor: Colors.black38,
-                          onToggle: (val) {
-                            setState(() {
-                              status1 = val;
-                            });
-                          },
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: height * 0.02,
                     ),
                   ],
                 ),

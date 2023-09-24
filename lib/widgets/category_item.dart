@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../screen/category_hotel_screen.dart';
 
@@ -22,18 +23,32 @@ class CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      borderRadius: BorderRadius.circular(20),
+      borderRadius: BorderRadius.circular(60),
       onTap: () {
         selectCategory(context);
       },
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(50),
-        child: Image.asset(
-          imgUrl,
+      child: Stack(children: [
+        SizedBox(
           width: 300,
-          height: 440,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: Image.asset(
+              imgUrl,
+              width: 250,
+              height: 350,
+            ),
+          ),
         ),
-      ),
+        Center(
+            child: Text(
+          title,
+          style: GoogleFonts.inter(
+            fontSize: 15,
+            fontWeight: FontWeight.w700,
+            color: Colors.white,
+          ),
+        )),
+      ]),
     );
   }
 }
