@@ -3,14 +3,19 @@ import 'package:hotel_reservation/modules/category.dart';
 import 'modules/hotel.dart';
 
 List<Category> dummyCategories = [
-  Category(id: "c1", title: "Hurghada", imgUrl: 'assets/Hurghada.png'),
-  Category(id: "c2", title: "Sharm El-Shaikh", imgUrl: 'assets/SharmElShiekh.png'),
-  Category(id: "c3", title: "North Coast", imgUrl: 'assets/NorthCoast.png'),
-  Category(id: "c4", title: "Ain Sokhna", imgUrl: 'assets/AinSokhna.png'),
-  Category(id: "c5", title: "Alexandria", imgUrl: 'assets/alex.jpg'),
-  Category(id: "c6", title: "Marsa Matrouh", imgUrl: 'assets/matrouh.jpeg'),
+  // Category(id: "c1", title: "Hurghada", imgUrl: 'assets/Hurghada.png'),
+  // Category(id: "c2", title: "Sharm El-Shaikh", imgUrl: 'assets/SharmElShiekh.png'),
+  // Category(id: "c3", title: "North Coast", imgUrl: 'assets/NorthCoast.png'),
+  // Category(id: "c4", title: "Ain Sokhna", imgUrl: 'assets/AinSokhna.png'),
+  // Category(id: "c5", title: "Alexandria", imgUrl: 'assets/alex.jpg'),
+  // Category(id: "c6", title: "Marsa Matrouh", imgUrl: 'assets/matrouh.jpeg'),
+  Category(id: "c1", title: "Hurghada", imgUrl: 'images/hur.png'),
+  Category(id: "c2", title: "Sharm El-Shaikh", imgUrl: 'images/sharm.png'),
+  Category(id: "c3", title: "North Coast", imgUrl: 'images/north.png'),
+  Category(id: "c4", title: "Ain Sokhna", imgUrl: 'images/ain.png'),
+  Category(id: "c5", title: "Alexandria", imgUrl: 'images/alex.png'),
+  Category(id: "c6", title: "Marsa Matrouh", imgUrl: 'images/matroh.png'),
 ];
-
 
 List<Hotel> dummyHotels = [
   Hotel(

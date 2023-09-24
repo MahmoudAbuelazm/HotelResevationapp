@@ -52,9 +52,13 @@ class LangContainer extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: width * 0.35,
+              width: width * 0.29,
             ),
-            Image.asset('images/icon-park-outline_correct.png',width: w,height: h,),
+            Image.asset(
+              'images/icon-park-outline_correct.png',
+              width: w,
+              height: h,
+            ),
           ],
         ),
       ),

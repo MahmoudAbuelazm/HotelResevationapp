@@ -30,7 +30,12 @@ class _ChangePassScreenState extends State<ChangePassScreen> {
             onTap: () {
               Navigator.pop(context);
             },
-            child: const Icon(Icons.arrow_back_outlined,size: 33,color: Colors.black,)),
+            child: const Icon(
+              Icons.arrow_back_outlined,
+              size: 33,
+              color: Colors.black,
+            )),
+        actions: [SizedBox(width: 30)],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -68,7 +73,7 @@ class _ChangePassScreenState extends State<ChangePassScreen> {
                     SizedBox(
                       width: width * 0.035,
                     ),
-                    const Icon(Icons.lock_person_outlined,size: 33),
+                    const Icon(Icons.lock_person_outlined, size: 33),
                     SizedBox(
                       width: width * 0.025,
                     ),
@@ -80,13 +85,12 @@ class _ChangePassScreenState extends State<ChangePassScreen> {
                         color: const Color(0xff067F77),
                       ),
                     ),
-                    SizedBox(
-                      width: width * 0.25,
-                    ),
+                    Spacer(),
                     IconButton(
                       icon: Icon(
                         secure ? Icons.visibility : Icons.visibility_off,
-                        color: const Color(0xff067F77),),
+                        color: const Color(0xff067F77),
+                      ),
                       onPressed: () {
                         setState(() {
                           secure = !secure;
@@ -128,7 +132,7 @@ class _ChangePassScreenState extends State<ChangePassScreen> {
                     SizedBox(
                       width: width * 0.035,
                     ),
-                    const Icon(Icons.lock_person_outlined,size: 33),
+                    const Icon(Icons.lock_person_outlined, size: 33),
                     SizedBox(
                       width: width * 0.025,
                     ),
@@ -140,13 +144,12 @@ class _ChangePassScreenState extends State<ChangePassScreen> {
                         color: const Color(0xff067F77),
                       ),
                     ),
-                    SizedBox(
-                      width: width * 0.10,
-                    ),
+                    Spacer(),
                     IconButton(
                       icon: Icon(
                         secure2 ? Icons.visibility : Icons.visibility_off,
-                        color: const Color(0xff067F77),),
+                        color: const Color(0xff067F77),
+                      ),
                       onPressed: () {
                         setState(() {
                           secure2 = !secure2;

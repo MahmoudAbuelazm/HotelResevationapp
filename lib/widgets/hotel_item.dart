@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class HotelItem extends StatefulWidget {
   final String id;
   final String imgUrl;
@@ -27,11 +26,14 @@ class HotelItem extends StatefulWidget {
 class _HotelItemState extends State<HotelItem> {
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
+
     return Padding(
-      padding: const EdgeInsets.only(bottom: 55.0, left: 22, right: 22),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: Container(
-        height: 450,
-        width: 350,
+        height: height * 0.55,
+        width: width * 0.9,
         decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(25.0)),
             color: Color.fromRGBO(226, 246, 245, 1)),
@@ -45,14 +47,14 @@ class _HotelItemState extends State<HotelItem> {
                 children: [
                   Text(
                     widget.title,
-                    style:GoogleFonts.inter(
+                    style: GoogleFonts.inter(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
                       color: Colors.black,
                     ),
                   ),
-                  const SizedBox(
-                    width: 100.0,
+                  SizedBox(
+                    width: width * 0.15,
                   ),
                   Image.asset('assets/Frame 44.png')
                 ],
@@ -91,12 +93,12 @@ class _HotelItemState extends State<HotelItem> {
                     Icons.shopping_cart_outlined,
                     size: 36,
                   ),
-                  const SizedBox(
-                    width: 135,
+                  SizedBox(
+                    width: width * 0.3,
                   ),
                   Column(
                     children: [
-                       Text(
+                      Text(
                         'Price started from',
                         style: GoogleFonts.inter(
                           fontSize: 14,
@@ -112,7 +114,7 @@ class _HotelItemState extends State<HotelItem> {
                           color: Colors.black,
                         ),
                       ),
-                       Text(
+                      Text(
                         'for every night',
                         style: GoogleFonts.inter(
                           fontSize: 14,

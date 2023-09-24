@@ -37,18 +37,17 @@ class _CategoryHotelScreenState extends State<CategoryHotelScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Column(children: [
-        const SizedBox(
-          height: 40.0,
-        ),
         SafeArea(
           child: Padding(
             padding: const EdgeInsets.only(bottom: 12.0),
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              height: 80,
-              width: 380,
+              height: height * 0.1,
+              width: width,
               decoration: const BoxDecoration(
                   color: Color.fromRGBO(226, 246, 245, 1),
                   borderRadius: BorderRadius.all(Radius.circular(20))),
@@ -64,8 +63,8 @@ class _CategoryHotelScreenState extends State<CategoryHotelScreen> {
                       size: 28,
                     ),
                   ),
-                  const SizedBox(
-                    width: 55.0,
+                  SizedBox(
+                    width: width * 0.14,
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -78,7 +77,7 @@ class _CategoryHotelScreenState extends State<CategoryHotelScreen> {
                           color: Colors.black,
                         ),
                       ),
-                       Text(
+                      Text(
                         'Hotel',
                         style: GoogleFonts.inter(
                           fontSize: 24,

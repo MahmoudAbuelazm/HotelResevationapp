@@ -34,6 +34,8 @@ class _PViewState extends State<PView> {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return MaterialApp(
       routes: {
         '/a': (ctx) => const CreateAccountScreen(),
@@ -63,54 +65,61 @@ class _PViewState extends State<PView> {
                                       bottomRight: Radius.circular(15)),
                                   child: Image.asset(
                                     item.imageUrl,
-                                    width: double.infinity,
+                                    width: width,
+                                    height: height * .7,
                                     fit: BoxFit.fill,
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.only(top: 500.0),
+                                  padding: const EdgeInsets.only(top: 430),
                                   child: Container(
-                                    width: double.infinity,
-                                    height: 400,
+                                    width: width,
+                                    height: height * .5,
                                     decoration: const BoxDecoration(
                                       color: Color.fromRGBO(240, 240, 245, 1),
                                       borderRadius: BorderRadius.all(
                                         Radius.circular(25),
                                       ),
                                     ),
-                                    child: Column(
-                                      children: [
-                                        const SizedBox(
-                                          height: 30,
-                                        ),
-                                        Text(
-                                          item.title,
-                                          style: GoogleFonts.inter(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.w600,
-                                            color: Colors.black,
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 20.0),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          const SizedBox(
+                                            height: 30,
                                           ),
-                                        ),
-                                        const SizedBox(
-                                          height: 15,
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(20.0),
-                                          child: Text(
-                                            item.description,
+                                          Text(
+                                            item.title,
                                             style: GoogleFonts.inter(
-                                              fontSize: 13,
+                                              fontSize: 19,
                                               fontWeight: FontWeight.w600,
                                               color: Colors.black,
                                             ),
-                                            textAlign: TextAlign.center,
                                           ),
-                                        ),
-                                        const SizedBox(
-                                          height: 70,
-                                        ),
-                                        Indicator(_currentIndex)
-                                      ],
+                                          const SizedBox(
+                                            height: 15,
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.all(20.0),
+                                            child: Text(
+                                              item.description,
+                                              style: GoogleFonts.inter(
+                                                fontSize: 13,
+                                                fontWeight: FontWeight.w600,
+                                                color: Colors.black,
+                                              ),
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 70,
+                                          ),
+                                          Indicator(_currentIndex)
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -124,35 +133,36 @@ class _PViewState extends State<PView> {
               );
             }),
             Align(
-                alignment: const Alignment(0, 0.85),
-                child: SizedBox(
-                  width: 370,
-                  child: ElevatedButton(
-                    style: ButtonStyle(
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20.0),
-                        ),
+              alignment: const Alignment(0, 0.85),
+              child: SizedBox(
+                width: width * .9,
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0),
                       ),
-                      padding:
-                          MaterialStateProperty.all(const EdgeInsets.all(15)),
-                      backgroundColor: MaterialStateProperty.all(
-                          const Color.fromRGBO(6, 177, 166, 1)),
                     ),
-                    onPressed: () async {
-                      Navigator.of(context).pushReplacementNamed(CreateAccountScreen.routeName);
-                    },
-                    child: Text(
-                      "Create Account",
-                      style: GoogleFonts.inter(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.white,
-                      ),
+                    padding:
+                        MaterialStateProperty.all(const EdgeInsets.all(15)),
+                    backgroundColor: MaterialStateProperty.all(
+                        const Color.fromRGBO(6, 177, 166, 1)),
+                  ),
+                  onPressed: () async {
+                    Navigator.of(context)
+                        .pushReplacementNamed(CreateAccountScreen.routeName);
+                  },
+                  child: Text(
+                    "Create Account",
+                    style: GoogleFonts.inter(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white,
                     ),
                   ),
                 ),
               ),
+            ),
             Align(
               alignment: const Alignment(0, 1),
               child: TextButton(

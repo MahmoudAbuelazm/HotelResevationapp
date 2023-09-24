@@ -22,33 +22,37 @@ class CategoryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return InkWell(
-      borderRadius: BorderRadius.circular(60),
       onTap: () {
         selectCategory(context);
       },
-      child: Stack(children: [
-        SizedBox(
-          width: 300,
-          child: ClipRRect(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+        child: Stack(
+          children: [
+          ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: Image.asset(
               imgUrl,
-              width: 250,
-              height: 350,
+              width: width * 0.45,
+              height: height * 0.6,
+              fit: BoxFit.cover,
             ),
           ),
+          Center(
+              child: Text(
+            title,
+            style: GoogleFonts.inter(
+              fontSize: 15,
+              fontWeight: FontWeight.w700,
+              color: Colors.white,
+            ),
+          )),
+        ]
         ),
-        Center(
-            child: Text(
-          title,
-          style: GoogleFonts.inter(
-            fontSize: 15,
-            fontWeight: FontWeight.w700,
-            color: Colors.white,
-          ),
-        )),
-      ]),
+      ),
     );
   }
 }
