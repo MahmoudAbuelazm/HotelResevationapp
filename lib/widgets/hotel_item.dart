@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hotel_reservation/screen/from_detail_screen.dart';
 
 class HotelItem extends StatefulWidget {
   final String id;
@@ -89,9 +90,11 @@ class _HotelItemState extends State<HotelItem> {
               left: 45,
               child: Row(
                 children: [
-                  const Icon(
-                    Icons.shopping_cart_outlined,
-                    size: 36,
+                  IconButton(
+                    icon: Icon(Icons.shopping_cart_outlined, size: 36),
+                    onPressed: () {
+                      Navigator.pushNamed(context, DetailScreen.routeName);
+                    },
                   ),
                   SizedBox(
                     width: width * 0.3,

@@ -1,6 +1,7 @@
 import 'package:easy_splash_screen/easy_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:hotel_reservation/screen/category_hotel_screen.dart';
+import 'package:hotel_reservation/screen/from_detail_screen.dart';
 import 'package:hotel_reservation/screen/settings/change_pass_screen.dart';
 import 'package:hotel_reservation/screen/create_account_screen.dart';
 import 'package:hotel_reservation/screen/login_screen.dart';
@@ -70,6 +71,7 @@ class _MyAppState extends State<MyApp> {
         TabScreen.routeName: (_) => TabScreen(_favouriteHotels),
         CategoryHotelScreen.routeName: (context) => CategoryHotelScreen(
             _availableHotels, _toggleFavourite, _isHotelFavourite),
+        DetailScreen.routeName:(_)=>DetailScreen(),
       },
     );
   }
