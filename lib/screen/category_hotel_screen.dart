@@ -64,7 +64,7 @@ class _CategoryHotelScreenState extends State<CategoryHotelScreen> {
                     ),
                   ),
                   SizedBox(
-                    width: width * 0.14,
+                    width: width * 0.21,
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -93,38 +93,46 @@ class _CategoryHotelScreenState extends State<CategoryHotelScreen> {
           ),
         ),
         Expanded(
-          child: ListView.builder(
-            itemBuilder: (ctx, index) {
+          child: GridView(
+            padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent: 310,
+              childAspectRatio: 0.5,
+              crossAxisSpacing: 5,
+              mainAxisSpacing: 1,
+            ),
+            children: categoryHotels!.map((catData) {
               return Stack(children: [
                 HotelItem(
-                  id: categoryHotels![index].id,
-                  imgUrl: categoryHotels![index].imgUrl,
-                  title: categoryHotels![index].title,
-                  price: categoryHotels![index].price,
-                  rating: categoryHotels![index].rating,
-                  numRating: categoryHotels![index].numRating,
+                  id: catData.id,
+                  title: catData.title,
+                  imgUrl: catData.imgUrl,
+                  price: catData.price,
+                  rating: catData.rating,
+                  numRating: catData.numRating,
+                  star: catData.star,
                 ),
                 Positioned(
-                  top: 20.0,
-                  left: 15.0,
+                  top: 15.0,
+                  left: 5.0,
                   child: IconButton(
                       color: Colors.white,
-                      icon: widget.isMealFavourite(categoryHotels![index].id)
+                      icon: widget.isMealFavourite(catData.id)
                           ? const Icon(
                               Icons.favorite,
                               color: Colors.red,
+                        size: 35,
                             )
-                          : const Icon(Icons.favorite_border),
+                          : const Icon(Icons.favorite_border,size: 35,),
                       onPressed: () {
                         //isLiked = !isLiked;
-                        widget.toggleFavourite(categoryHotels![index].id);
+                        widget.toggleFavourite(catData.id);
 
                         //print(_favouriteHotel);
                       }),
                 ),
               ]);
-            },
-            itemCount: categoryHotels!.length,
+            }).toList(),
           ),
         ),
       ]),

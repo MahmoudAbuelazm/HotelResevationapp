@@ -6,6 +6,7 @@ class Hotel {
   final String rating;
   final String numRating;
   final List<String> category;
+  final String star;
 
   Hotel(
       {required this.id,
@@ -14,6 +15,7 @@ class Hotel {
       required this.price,
       required this.rating,
       required this.numRating,
-        required this.category
+        required this.category,
+        required this.star,
       });
 }

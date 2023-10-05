@@ -68,7 +68,9 @@ class FavouriteTab extends StatelessWidget {
                         title: favourites[index].title,
                         price: favourites[index].price,
                         rating: favourites[index].rating,
-                        numRating: favourites[index].numRating);
+                        numRating: favourites[index].numRating,
+                      star: favourites[index].star,
+                    );
                   },
                   itemCount: favourites.length,
                 ),

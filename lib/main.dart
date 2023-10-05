@@ -1,7 +1,10 @@
 import 'package:easy_splash_screen/easy_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:hotel_reservation/screen/add_new_card.dart';
 import 'package:hotel_reservation/screen/category_hotel_screen.dart';
+import 'package:hotel_reservation/screen/completed.dart';
 import 'package:hotel_reservation/screen/from_detail_screen.dart';
+import 'package:hotel_reservation/screen/hotel_checkout.dart';
 import 'package:hotel_reservation/screen/settings/change_pass_screen.dart';
 import 'package:hotel_reservation/screen/create_account_screen.dart';
 import 'package:hotel_reservation/screen/login_screen.dart';
@@ -41,11 +44,13 @@ class _MyAppState extends State<MyApp> {
     if (existingIndex >= 0) {
       setState(() {
         _favouriteHotels.removeAt(existingIndex);
+        print("_favouriteHotels = $_favouriteHotels");
       });
     } else {
       setState(() {
         _favouriteHotels.add(
             dummyHotels.firstWhere((hotel) => hotel.id == hotelId));
+        print("_favouriteHotels = $_favouriteHotels");
       });
     }
   }
@@ -60,18 +65,23 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(),
+      theme: ThemeData(
+colorScheme: ColorScheme.fromSwatch().copyWith(primary: const Color(0xff067F77),secondary: const Color(0xff067F77))
+      ),
       home: const PView(),
       //initialRoute: HomeScreen.routeName,
       routes: {
         CreateAccountScreen.routeName: (_) => const CreateAccountScreen(),
         SettingScreen.routeName: (_) => const SettingScreen(),
         Loginscreen.routeName: (_) => const Loginscreen(),
-        vereficationscreen.routeName: (_) => const vereficationscreen(),
+        VerificationScreen.routeName: (_) => const VerificationScreen(),
         TabScreen.routeName: (_) => TabScreen(_favouriteHotels),
         CategoryHotelScreen.routeName: (context) => CategoryHotelScreen(
             _availableHotels, _toggleFavourite, _isHotelFavourite),
-        DetailScreen.routeName:(_)=>DetailScreen(),
+        DetailScreen.routeName:(_)=>const DetailScreen(),
+        HotelCheckOut.routeName : (_) => const HotelCheckOut(),
+        NewCard.routeName : (_)=>const NewCard(),
+        Completed.routeName: (_)=>const Completed(),
       },
     );
   }

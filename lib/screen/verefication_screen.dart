@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pinput/pinput.dart';
 
-class vereficationscreen extends StatelessWidget {
+import 'p_view.dart';
+
+class VerificationScreen extends StatelessWidget {
   static const String routeName = 'Verification Screen';
-  const vereficationscreen({super.key});
+
+  const VerificationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +35,7 @@ class vereficationscreen extends StatelessWidget {
             ),
           ),
         ),
-        actions: [
+        actions: const [
           SizedBox(
             width: 45,
           ),
@@ -47,13 +50,13 @@ class vereficationscreen extends StatelessWidget {
           ),
           CircleAvatar(
             radius: 65,
-            backgroundColor: Color(0xff06B1A6),
+            backgroundColor: const Color(0xff06B1A6),
             child: CircleAvatar(
               radius: 50,
+              backgroundColor: const Color(0xff07E9DA),
               child: Image.asset(
                 'images/EnvelopeSimpleOpen.png',
               ),
-              backgroundColor: Color(0xff07E9DA),
             ),
           ),
           SizedBox(
@@ -101,7 +104,7 @@ class vereficationscreen extends StatelessWidget {
               backgroundColor: const Color(0xff06B1A6),
             ),
             onPressed: () => _openModalSheet(context),
-            child: Container(
+            child: SizedBox(
               height: MediaQuery.of(context).size.height * 0.06,
               child: Center(
                 child: Text(
@@ -132,7 +135,7 @@ class vereficationscreen extends StatelessWidget {
                       style: GoogleFonts.inter(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Color(0xff06B1A6),
+                        color: const Color(0xff06B1A6),
                       ))),
             ],
           )
@@ -145,10 +148,10 @@ class vereficationscreen extends StatelessWidget {
 final defaultPinTheme = PinTheme(
   width: 40,
   height: 50,
-  textStyle:
-      TextStyle(fontSize: 20, color: Colors.black, fontWeight: FontWeight.w600),
+  textStyle: const TextStyle(
+      fontSize: 20, color: Colors.black, fontWeight: FontWeight.w600),
   decoration: BoxDecoration(
-    border: Border.all(color: Color(0xff06B1A6)),
+    border: Border.all(color: const Color(0xff06B1A6)),
     borderRadius: BorderRadius.circular(20),
   ),
 );
@@ -163,18 +166,18 @@ void _openModalSheet(BuildContext context) {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(height: 40),
+          const SizedBox(height: 40),
           CircleAvatar(
             radius: 65,
-            backgroundColor: Color(0xffD9D9D9),
+            backgroundColor: const Color(0xffD9D9D9),
             child: CircleAvatar(
               radius: 50,
-              backgroundColor: Color(0xff319F43),
+              backgroundColor: const Color(0xff319F43),
               child: CircleAvatar(
                 radius: 24,
                 backgroundColor: Colors.white,
                 child: CircleAvatar(
-                  backgroundColor: Color(0xff319F43),
+                  backgroundColor: const Color(0xff319F43),
                   radius: 20,
                   child: Image.asset(
                     'images/Vector.png',
@@ -183,7 +186,7 @@ void _openModalSheet(BuildContext context) {
               ),
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Text("Register Success",
               style: GoogleFonts.inter(
                 fontSize: 22,
@@ -194,7 +197,7 @@ void _openModalSheet(BuildContext context) {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 18),
             child: Text(
-              "congratulaions! Your account already created.",
+              "congratulations! Your account already created.",
               style: GoogleFonts.inter(
                 fontSize: 14,
                 color: Colors.black,
@@ -219,8 +222,11 @@ void _openModalSheet(BuildContext context) {
               ),
               backgroundColor: const Color(0xff06B1A6),
             ),
-            onPressed: () => _openModalSheet(context),
-            child: Container(
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const PView()),
+            ),
+            child: SizedBox(
               height: MediaQuery.of(context).size.height * 0.06,
               child: Center(
                 child: Text(

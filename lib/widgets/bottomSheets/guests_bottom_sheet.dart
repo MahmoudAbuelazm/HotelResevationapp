@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class GuestsBottomSheet extends StatefulWidget {
+  const GuestsBottomSheet({super.key});
+  static String guests = "Select number of guests";
+
   @override
   State<GuestsBottomSheet> createState() => _GuestsBottomSheetState();
 }
@@ -12,12 +16,21 @@ class _GuestsBottomSheetState extends State<GuestsBottomSheet> {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8.0),
       child:Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
+          Center(
+            child: Container(
+              height: 6,
+              width: width * 0.2,
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),color: Colors.black),
+            ),
+          ),
+          const SizedBox(
             height: 8,
           ),
           /* Container(
@@ -29,40 +42,41 @@ class _GuestsBottomSheetState extends State<GuestsBottomSheet> {
              ),
             ),
             */
-          Center(
+           Center(
             child: Text(
               'Room and Guests',
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 22,
-                  color: Colors.black),
+              style: GoogleFonts.inter(
+                fontSize: 22,
+                fontWeight: FontWeight.w600,
+                color: Colors.black,
+              ),
             ),
           ),
-          SizedBox(
-            height: 30,
+           SizedBox(
+            height: height * 0.03,
           ),
-          Text(
+           Text(
             'Room',
-            style: TextStyle(
+            style: GoogleFonts.inter(
               fontWeight: FontWeight.bold,
-              fontSize: 24,
+              fontSize: 20,
               color: Colors.black,
             ),
             textAlign: TextAlign.start,
           ),
-          SizedBox(
+          const SizedBox(
             height: 5.0,
           ),
           TextFormField(
             showCursor: false,
             readOnly: true,
             decoration: InputDecoration(
-              hintText: 'Minimum contain 4 pepole',
-              hintStyle:  TextStyle(
-                color: Color(0xff06B1A6),
+              hintText: 'Minimum contain 4 people',
+              hintStyle:   GoogleFonts.inter(
+                color: const Color(0xff06B1A6),
               ),
-              suffixIcon: Container(
-                width: 85,
+              suffixIcon: SizedBox(
+                width: width * 0.2,
                 child: Row(
                   children: [
                     InkWell(
@@ -81,19 +95,19 @@ class _GuestsBottomSheetState extends State<GuestsBottomSheet> {
                             borderRadius: BorderRadius.circular(25.0),
                             border: Border.all(
                                 width: 1,
-                                color: Color(0xff06B1A6)
+                                color: const Color(0xff06B1A6)
                             )
                         ),
-                        child: Icon(Icons.remove,color:Colors.black,),
+                        child: const Icon(Icons.remove,color:Colors.black,),
                       ),
                     ),
-                    SizedBox(
+                     const SizedBox(
                       width: 7.0,
                     ),
-                    Text('$numberOfGuests',style: TextStyle(
+                    Text('$numberOfGuests',style:  GoogleFonts.inter(
                         fontSize: 18
                     ),),
-                    SizedBox(
+                    const SizedBox(
                       width: 7.0,
                     ),
                     InkWell(
@@ -112,10 +126,10 @@ class _GuestsBottomSheetState extends State<GuestsBottomSheet> {
                             borderRadius: BorderRadius.circular(25.0),
                             border: Border.all(
                                 width: 1,
-                                color: Color(0xff06B1A6)
+                                color: const Color(0xff06B1A6)
                             )
                         ),
-                        child: Icon(Icons.add,color:Colors.black,),
+                        child: const Icon(Icons.add,color:Colors.black,),
                       ),
                     ),
                   ],
@@ -123,19 +137,19 @@ class _GuestsBottomSheetState extends State<GuestsBottomSheet> {
               )
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20.0,
           ),
-          Text(
+           Text(
             'Adults',
-            style: TextStyle(
+            style: GoogleFonts.inter(
               fontWeight: FontWeight.bold,
               fontSize: 24,
               color: Colors.black,
             ),
             textAlign: TextAlign.start,
           ),
-          SizedBox(
+          const SizedBox(
             height: 5.0,
           ),
           TextFormField(
@@ -143,11 +157,11 @@ class _GuestsBottomSheetState extends State<GuestsBottomSheet> {
             readOnly: true,
             decoration: InputDecoration(
                 hintText: 'Age +15',
-                hintStyle:  TextStyle(
-                  color: Color(0xff06B1A6),
+                hintStyle:   GoogleFonts.inter(
+                  color: const Color(0xff06B1A6),
                 ),
-                suffixIcon: Container(
-                  width: 90,
+                suffixIcon: SizedBox(
+                  width: width * 0.22,
                   child: Row(
                     children: [
                       InkWell(
@@ -166,19 +180,19 @@ class _GuestsBottomSheetState extends State<GuestsBottomSheet> {
                               borderRadius: BorderRadius.circular(25.0),
                               border: Border.all(
                                   width: 1,
-                                  color: Color(0xff06B1A6)
+                                  color: const Color(0xff06B1A6)
                               )
                           ),
-                          child: Icon(Icons.remove,color:Colors.black,),
+                          child: const Icon(Icons.remove,color:Colors.black,),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 7.0,
                       ),
-                      Text('$age',style: TextStyle(
+                      Text('$age',style:  GoogleFonts.inter(
                           fontSize: 18
                       ),),
-                      SizedBox(
+                      const SizedBox(
                         width: 7.0,
                       ),
                       InkWell(
@@ -197,10 +211,10 @@ class _GuestsBottomSheetState extends State<GuestsBottomSheet> {
                               borderRadius: BorderRadius.circular(25.0),
                               border: Border.all(
                                   width: 1,
-                                  color: Color(0xff06B1A6)
+                                  color: const Color(0xff06B1A6)
                               )
                           ),
-                          child: Icon(Icons.add,color:Colors.black,),
+                          child: const Icon(Icons.add,color:Colors.black,),
                         ),
                       ),
                     ],
@@ -208,19 +222,19 @@ class _GuestsBottomSheetState extends State<GuestsBottomSheet> {
                 )
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20.0,
           ),
-          Text(
+           Text(
             'Children',
-            style: TextStyle(
+            style: GoogleFonts.inter(
               fontWeight: FontWeight.bold,
               fontSize: 24,
               color: Colors.black,
             ),
             textAlign: TextAlign.start,
           ),
-          SizedBox(
+          const SizedBox(
             height: 5.0,
           ),
           TextFormField(
@@ -228,11 +242,11 @@ class _GuestsBottomSheetState extends State<GuestsBottomSheet> {
             readOnly: true,
             decoration: InputDecoration(
                 hintText: 'Age 2-12',
-                hintStyle:  TextStyle(
-                  color: Color(0xff06B1A6),
+                hintStyle:   GoogleFonts.inter(
+                  color: const Color(0xff06B1A6),
                 ),
-                suffixIcon: Container(
-                  width: 90,
+                suffixIcon: SizedBox(
+                  width: width * 0.20,
                   child: Row(
                     children: [
                       InkWell(
@@ -251,19 +265,19 @@ class _GuestsBottomSheetState extends State<GuestsBottomSheet> {
                               borderRadius: BorderRadius.circular(25.0),
                               border: Border.all(
                                   width: 1,
-                                  color: Color(0xff06B1A6)
+                                  color: const Color(0xff06B1A6)
                               )
                           ),
-                          child: Icon(Icons.remove,color:Colors.black,),
+                          child: const Icon(Icons.remove,color:Colors.black,),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 7.0,
                       ),
-                      Text('$childrenAge',style: TextStyle(
+                      Text('$childrenAge',style:  GoogleFonts.inter(
                           fontSize: 18
                       ),),
-                      SizedBox(
+                      const SizedBox(
                         width: 7.0,
                       ),
                       InkWell(
@@ -282,10 +296,10 @@ class _GuestsBottomSheetState extends State<GuestsBottomSheet> {
                               borderRadius: BorderRadius.circular(25.0),
                               border: Border.all(
                                   width: 1,
-                                  color: Color(0xff06B1A6)
+                                  color: const Color(0xff06B1A6)
                               )
                           ),
-                          child: Icon(Icons.add,color:Colors.black,),
+                          child: const Icon(Icons.add,color:Colors.black,),
                         ),
                       ),
                     ],
@@ -293,25 +307,29 @@ class _GuestsBottomSheetState extends State<GuestsBottomSheet> {
                 )
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20.0,
           ),
           InkWell(
             onTap: () {
-              // save data in variables بس مش عارفه
+             setState(() {
+               GuestsBottomSheet.guests = "${age+childrenAge} Guest";
+               Navigator.of(context).pop();
+             });
             },
             child: Container(
               alignment: Alignment.center,
-              height: 50.0,
+              height: height * 0.07,
               decoration: BoxDecoration(
-                  color: Color(0xff06B1A6),
+                  color: const Color(0xff06B1A6),
                   borderRadius: BorderRadius.circular(25.0)),
-              child: Text(
+              child:  Text(
                 'Save',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold),
+                style: GoogleFonts.inter(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white,
+                ),
               ),
             ),
           )

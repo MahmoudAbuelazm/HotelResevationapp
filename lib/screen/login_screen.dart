@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hotel_reservation/screen/verefication_screen.dart';
 
 import 'create_account_screen.dart';
 import 'home/tabs_screen.dart';
 
 class Loginscreen extends StatefulWidget {
   static const String routeName = 'Login Screen';
+
   const Loginscreen({super.key});
 
   @override
@@ -457,7 +459,7 @@ void _openModalSheetagain(BuildContext context) {
     isScrollControlled: true, // Allows content to scroll within the modal
     builder: (BuildContext context) {
       return Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
@@ -578,8 +580,12 @@ void _openModalSheetagain(BuildContext context) {
                 ),
                 backgroundColor: const Color(0xff06B1A6),
               ),
-              onPressed: () => _openModalSheet(context),
-              child: Container(
+              onPressed: () {
+                Navigator.of(context).pushNamed(
+                  VerificationScreen.routeName,
+                );
+              },
+              child: SizedBox(
                 height: MediaQuery.of(context).size.height * 0.06,
                 child: Center(
                   child: Text(
