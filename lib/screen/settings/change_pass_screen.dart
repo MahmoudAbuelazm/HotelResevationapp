@@ -35,7 +35,7 @@ class _ChangePassScreenState extends State<ChangePassScreen> {
               size: 33,
               color: Colors.black,
             )),
-        actions: [SizedBox(width: 30)],
+        actions: const [SizedBox(width: 30)],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),

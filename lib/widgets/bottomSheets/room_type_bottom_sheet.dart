@@ -14,6 +14,8 @@ class _RoomTypeBottomSheetState extends State<RoomTypeBottomSheet> {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8.0),
       child: Column(
@@ -22,7 +24,7 @@ class _RoomTypeBottomSheetState extends State<RoomTypeBottomSheet> {
           Center(
             child: Container(
               height: 6,
-              width: 55,
+              width: width*0.2,
               decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),color: Colors.black),
             ),
           ),
@@ -39,13 +41,13 @@ class _RoomTypeBottomSheetState extends State<RoomTypeBottomSheet> {
                   color: Colors.black),
             ),
           ),
-          const SizedBox(
-            height: 15,
+           SizedBox(
+            height: height*0.03,
           ),
           Container(
             alignment: Alignment.center,
             width: double.infinity,
-            height: 50,
+            height: height*0.05,
             child: TextFormField(
               decoration: InputDecoration(
                 prefixIcon: const Icon(Icons.search,color: Colors.black,size: 36,),
@@ -60,16 +62,16 @@ class _RoomTypeBottomSheetState extends State<RoomTypeBottomSheet> {
               ),
             ),
           ),
-          const SizedBox(
-            height: 35.0,
+           SizedBox(
+            height: height*0.03,
           ),
            Text('Room List (24)',style: GoogleFonts.inter(
             color: Colors.black,
             fontSize: 28,
             fontWeight: FontWeight.bold
           ),),
-          const SizedBox(
-            height: 20.0,
+           SizedBox(
+            height: height*0.02,
           ),
           Row(
             children: [
@@ -103,8 +105,8 @@ class _RoomTypeBottomSheetState extends State<RoomTypeBottomSheet> {
 
             ],
           ),
-          const SizedBox(
-            height: 25.0,
+           SizedBox(
+            height: height*0.03,
           ),
           Row(
             children: [
@@ -137,8 +139,8 @@ class _RoomTypeBottomSheetState extends State<RoomTypeBottomSheet> {
               ),
             ],
           ),
-          const SizedBox(
-            height: 30.0,
+           SizedBox(
+            height: height*0.06,
           ),
           InkWell(
             onTap: () {
@@ -149,7 +151,7 @@ class _RoomTypeBottomSheetState extends State<RoomTypeBottomSheet> {
             },
             child: Container(
               alignment: Alignment.center,
-              height: 50.0,
+              height: height*0.06,
               decoration: BoxDecoration(
                   color: const Color(0xff06B1A6),
                   borderRadius: BorderRadius.circular(25.0)),

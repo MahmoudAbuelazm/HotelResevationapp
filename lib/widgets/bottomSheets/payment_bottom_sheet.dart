@@ -17,6 +17,8 @@ class _PaymentState extends State<Payment> {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Container(
       height: 450,
       padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8.0),
@@ -26,21 +28,21 @@ class _PaymentState extends State<Payment> {
           Center(
             child: Container(
               height: 6,
-              width: 55,
+              width: width * 0.3,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20), color: Colors.grey),
             ),
           ),
-          const SizedBox(
-            height: 20,
+           SizedBox(
+            height: height * 0.02,
           ),
           Text(
             'Payment Method',
             style: GoogleFonts.inter(
                 fontWeight: FontWeight.bold, fontSize: 24, color: Colors.black),
           ),
-          const SizedBox(
-            height: 40,
+           SizedBox(
+            height: height * 0.035,
           ),
           Container(
             padding: const EdgeInsets.all(10),
@@ -53,16 +55,16 @@ class _PaymentState extends State<Payment> {
             child: Row(
               children: [
                 Image.asset("images/p1.png"),
-                const SizedBox(
-                  width: 20,
+                 SizedBox(
+                  width: width *0.02,
                 ),
                 Text(
                   'PayPal',
                   style: GoogleFonts.inter(
                       fontWeight: FontWeight.bold, fontSize: 22),
                 ),
-                const SizedBox(
-                  width: 200,
+                 SizedBox(
+                  width: width*0.5,
                 ),
                 Checkbox(
                   checkColor: Colors.white,
@@ -79,8 +81,8 @@ class _PaymentState extends State<Payment> {
               ],
             ),
           ),
-          const SizedBox(
-            height: 25.0,
+           SizedBox(
+            height: height*0.03,
           ),
           Container(
             padding: const EdgeInsets.all(10),
@@ -93,16 +95,16 @@ class _PaymentState extends State<Payment> {
             child: Row(
               children: [
                 Image.asset("images/p2.png"),
-                const SizedBox(
-                  width: 20,
+                 SizedBox(
+                  width: width *0.02,
                 ),
                 Text(
                   'MasterCard',
                   style: GoogleFonts.inter(
                       fontWeight: FontWeight.bold, fontSize: 22),
                 ),
-                const SizedBox(
-                  width: 150,
+                 SizedBox(
+                  width: width * 0.38,
                 ),
                 Checkbox(
                   checkColor: Colors.white,
@@ -119,8 +121,8 @@ class _PaymentState extends State<Payment> {
               ],
             ),
           ),
-          const SizedBox(
-            height: 30.0,
+           SizedBox(
+            height: height*0.03,
           ),
           GestureDetector(
             onTap: () {
@@ -135,8 +137,8 @@ class _PaymentState extends State<Payment> {
                   size: 28,
                   color: Color(0xff06B1A6),
                 ),
-                const SizedBox(
-                  width: 19,
+                 SizedBox(
+                  width: width * 0.02,
                 ),
                 Text(
                   "Add Payment Method",
@@ -146,8 +148,8 @@ class _PaymentState extends State<Payment> {
               ],
             ),
           ),
-          const SizedBox(
-            height: 30.0,
+           SizedBox(
+            height: height*0.03,
           ),
           InkWell(
             onTap: () {
@@ -158,8 +160,8 @@ class _PaymentState extends State<Payment> {
             child: Center(
               child: Container(
                 alignment: Alignment.center,
-                height: 50.0,
-                width: 250,
+                height: height*0.06,
+                width: width*0.6,
                 decoration: BoxDecoration(
                     color: const Color(0xff06B1A6),
                     borderRadius: BorderRadius.circular(25.0)),

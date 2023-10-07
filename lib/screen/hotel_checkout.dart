@@ -16,6 +16,8 @@ class HotelCheckOut extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     final hotelId = ModalRoute.of(context)?.settings.arguments as String;
     final selectedHotel =
         dummyHotels.firstWhere((hotel) => hotel.id == hotelId);
@@ -44,15 +46,15 @@ class HotelCheckOut extends StatelessWidget {
       ),
       body: Column(
         children: <Widget>[
-          const SizedBox(
-            height: 30,
+           SizedBox(
+            height: height * 0.01,
           ),
           Row(
             children: <Widget>[
               Container(
                 padding: const EdgeInsets.all(20),
-                height: 200,
-                width: 200,
+                height: height * 0.26,
+                width: width * 0.45,
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(15),
                     child: Image.asset(
@@ -71,8 +73,8 @@ class HotelCheckOut extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: GoogleFonts.inter(fontSize: 15,fontWeight: FontWeight.bold),
                   ),
-                  const SizedBox(
-                    height: 20,
+                   SizedBox(
+                    height: height*0.02,
                   ),
                   Text(
                     selectedHotel.rating,
@@ -90,15 +92,15 @@ class HotelCheckOut extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(
-            height: 20,
+           SizedBox(
+            height: height*0.01,
           ),
           Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
                 border: Border.all(color: Colors.grey, width: 2)),
-            height: 505,
-            width: 360,
+            height: height*0.58,
+            width: width * 0.85,
             padding: const EdgeInsets.all(15),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -111,8 +113,8 @@ class HotelCheckOut extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
+                 SizedBox(
+                  height: height*0.02,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -129,8 +131,8 @@ class HotelCheckOut extends StatelessWidget {
                     )
                   ],
                 ),
-                const SizedBox(
-                  height: 20,
+                 SizedBox(
+                  height: height * 0.02,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -147,8 +149,8 @@ class HotelCheckOut extends StatelessWidget {
                     )
                   ],
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: height * 0.02,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -165,8 +167,8 @@ class HotelCheckOut extends StatelessWidget {
                     )
                   ],
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: height * 0.02,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -183,8 +185,8 @@ class HotelCheckOut extends StatelessWidget {
                     )
                   ],
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: height * 0.02,
                 ),
                 const Divider(thickness: 2,),
                 const SizedBox(
@@ -196,8 +198,8 @@ class HotelCheckOut extends StatelessWidget {
                     fontSize: 15,
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: height * 0.02,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -214,8 +216,8 @@ class HotelCheckOut extends StatelessWidget {
                     )
                   ],
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: height * 0.02,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -232,8 +234,8 @@ class HotelCheckOut extends StatelessWidget {
                     )
                   ],
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: height * 0.02,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -250,8 +252,8 @@ class HotelCheckOut extends StatelessWidget {
                     )
                   ],
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: height * 0.02,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -264,8 +266,8 @@ class HotelCheckOut extends StatelessWidget {
                     const Icon(Icons.arrow_back_ios,size: 20,)
                   ],
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: height * 0.02,
                 ),
                 Center(
                   child: GestureDetector(
@@ -277,8 +279,8 @@ class HotelCheckOut extends StatelessWidget {
                           });
                     },
                     child: Container(
-                      width: 250,
-                      height: 48,
+                      width: width * 0.6,
+                      height: height * 0.06,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20.0),
                           color: const Color(0xff06B1A6)),

@@ -9,6 +9,8 @@ class Completed extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -29,8 +31,8 @@ class Completed extends StatelessWidget {
           Center(
             child: Image.asset("images/p3.png"),
           ),
-          const SizedBox(
-            height: 50,
+           SizedBox(
+            height: height*0.05,
           ),
           Text(
             "Payment Complete",
@@ -53,8 +55,8 @@ class Completed extends StatelessWidget {
                 GestureDetector(
                   onTap: ()=>Navigator.of(context).pop(),
                   child: Container(
-                    width: 350,
-                    height: 48,
+                    width: width * 0.8,
+                    height: height * 0.06,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20.0),
                         color: const Color(0xff06B1A6)),
@@ -69,8 +71,8 @@ class Completed extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
+                 SizedBox(
+                  height: height *0.02,
                 ),
                 GestureDetector(
                   onTap: () {
@@ -80,8 +82,8 @@ class Completed extends StatelessWidget {
                     );
                   },
                   child: Container(
-                    width: 350,
-                    height: 48,
+                    width: width * 0.8,
+                    height: height * 0.05,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20.0),
                       border: Border.all(color: const Color(0xff06B1A6))

@@ -7,6 +7,8 @@ class NewCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -145,12 +147,12 @@ class NewCard extends StatelessWidget {
                     fillColor: const Color(0xffF0E8E8),
                     filled: true),
               ),
-              const SizedBox(height: 210,),
+               SizedBox(height: height * 0.25,),
               GestureDetector(
                 onTap: ()=>Navigator.of(context).pop(),
                 child: Container(
                   width: double.infinity,
-                  height: 48,
+                  height: height * 0.06,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.0),
                       color: const Color(0xff06B1A6)),

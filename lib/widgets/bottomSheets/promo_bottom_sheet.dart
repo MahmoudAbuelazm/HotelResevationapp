@@ -16,16 +16,18 @@ class _PromoState extends State<Promo> {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Container(
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(30)),
-      height: 400,
+      height: height*0.5,
       padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
             height: 6,
-            width: 55,
+            width: width * 0.2,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20), color: Colors.grey),
           ),
@@ -42,8 +44,8 @@ class _PromoState extends State<Promo> {
               ),
             ),
           ),
-          const SizedBox(
-            height: 20,
+           SizedBox(
+            height: height*0.02,
           ),
           GestureDetector(
             onTap: () {
@@ -94,8 +96,8 @@ class _PromoState extends State<Promo> {
               isSelected3? const Icon(Icons.done_outline,size: 30,color: Colors.black,) : Container()
             ),
           ),
-          const SizedBox(
-            height: 40,
+           SizedBox(
+            height: height *0.03,
           ),
           InkWell(
             onTap: (){
@@ -108,8 +110,8 @@ class _PromoState extends State<Promo> {
             },
             child: Container(
               alignment: Alignment.center,
-              height: 50.0,
-              width: 250,
+              height: height*0.065,
+              width: width*0.6,
               decoration: BoxDecoration(
                   color: const Color(0xff06B1A6),
                   borderRadius: BorderRadius.circular(25.0)),
